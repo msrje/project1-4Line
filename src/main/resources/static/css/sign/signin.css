@@ -77,12 +77,12 @@
 }
 .signin_wrapper .signin_link li a {
     color: #999;
-    letter-spacing: -0.05em;
+    padding: 1.5em;
 }
-.signin_wrapper .signin_link li:first-child {
+.signin_wrapper .signin_link li a:first-child {
     text-align: left;
 }
-.signin_wrapper .signin_link li:first-child:after {
+.signin_wrapper .signin_link li a:first-child:after {
     right: 8px;
 }
 .signin_wrapper .signin_link li {
@@ -91,8 +91,12 @@
 }
 .signin_wrapper .signin_link li {
     display: table-cell;
-    text-align: center;
+    border-left: 1px solid;
+    border-color:#c0c0c0;
     position: relative;
+}
+.signin_wrapper .signin_link li:first-child {
+    border: none;
 }
 .signin_wrapper .signin_link li:last-child {
     text-align: right;
@@ -102,8 +106,7 @@
     position: relative;
 }
 .signin_wrapper .signin_link ul {
-    padding: 20px 18px;
-    width: 100%;
+    padding: 2em 1em;
     box-sizing: border-box;
     display: table;
 }

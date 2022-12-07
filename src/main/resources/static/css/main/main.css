@@ -129,9 +129,110 @@
 	height: 70px;
 }
 
+.section_subway {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
 
+.utilization {
+    background: url(/images/main/bg_utilization.png) 0 0 no-repeat;
+    width: 400px;
+    height: 300px;
+    position: relative;
+    margin-left: 55px;
+    float: left;
+}
+.history {
+    float: left;
+    width: 825px;
+    position: relative;
+}
 
+.content_top .utilization p {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 40px;
+    letter-spacing: -0.03em;
+    position: absolute;
+    left: 39px;
+    top: 38px;
+}
 
+.content_top .history p {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 40px;
+    letter-spacing: -0.03em;
+    position: absolute;
+    left: 410px;
+    top: 38px;
+}
+.content_bottom {
+    margin: 30px;
+    overflow: hidden;
+}
+.content_bottom .whats_new {
+    background-color: #fff;
+    width: 870px;
+    height: 300px;
+    border-radius: 30px 0 30px 0;
+    position: relative;
+    float: left;
+}
+
+.content_bottom .whats_new .hd {
+    position: absolute;
+    top: 75px;
+    left: 60px;
+}
+.content_bottom .whats_new .hd h2 {
+    color: #292929;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: font_sw;
+    background: url(/images/main/bul_tit.png) 0 0 no-repeat;
+    min-height: 60px;
+    padding: 17px 0 0 25px;
+    margin-bottom: 1px;
+}
+.content_bottom .whats_new .hd p {
+    text-align: center;
+    line-height: 26px;
+    letter-spacing: -0.04em;
+}
+.content_bottom .whats_new .board_list {
+    position: absolute;
+    left: 389px;
+    top: 76px;
+}
+.content_bottom .whats_new .board_list ul li a {
+    margin-top: 21px;
+    display: inline-block;
+    font-size: 16px;
+    color: #292929;
+    position: relative;
+    letter-spacing: -0.04em;
+}
+.content_bottom .whats_new .board_list .more {
+    display: inline-block;
+    color: #999999;
+    font-size: 14px;
+    padding: 33px 0 8px;
+}
+.content_bottom .banner_sponsor {
+
+    float: left;
+    width: 270px;
+    height: 300px;
+    margin-left: 30px;
+    position: absolute;
+    left: 980px;
+    overflow: hidden;
+    border-radius: 0 30px 0 30px;
+}
 
 
 

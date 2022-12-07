@@ -193,7 +193,13 @@ select:focus {
 	outline:none;
 }
 
-
+.page-tit{
+    padding: 50px 0;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+}
 
 
 

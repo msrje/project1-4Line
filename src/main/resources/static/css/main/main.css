@@ -77,6 +77,11 @@
     padding: 17px 0 0 25px;
     margin-bottom: 1px;
     background-repeat: no-repeat;
+    margin-top: 80px;
+    margin-left: 25%;
+}
+.wrap >.menu-wrap>.sand>.menu ul{
+	margin-left: 60%;
 }
 .wrap >.menu-wrap>.sand>.menu ul li{
 	float: left;
@@ -113,25 +118,52 @@
 	margin-right: 25px;
 	border-radius: 30px 0 30px 0;
 }
-/* 
-.wrap>.event-wrap>.subway a {
-	background-image: url("/images/main/bg_utilization.png");
-	width: 400px;
-	height: 300px;
-	position: relative;
-}
- */
-.wrap>.info-wrap ul li:before{
-	background-image: url("icon_quickmenu.png");
+
+.wrap>.menu-wrap>.sand>.goods>ul li a >.goodsimg1{
+	background-image: url("/images/main/sandwich_cl06_01.jpg");
 	background-repeat: no-repeat;
 	background-size: contain;
-	width: 70px;
-	height: 70px;
+	width: 260px;
+	height: 182px;
+}
+.wrap>.menu-wrap>.sand>.goods>ul li a >.goodsimg2{
+	background-image: url("/images/main/sandwich_cl04_01.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 260px;
+	height: 182px;
+}
+.wrap>.menu-wrap>.sand>.goods>ul li a >.goodsimg3{
+	background-image: url("/images/main/sandwich_cl02_01.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 260px;
+	height: 182px;
+}
+.wrap>.menu-wrap>.sand>.goods>ul li a >.goodsimg4{
+	background-image: url("/images/main/sandwich_cl01_01.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 260px;
+	height: 182px;
 }
 
 
-
-
-
-
-
+.wrap>.menu-wrap>.sand>.goods>ul li a strong{
+	text-align:center;
+	width:260px;
+	font-size: 18px;
+    color: #292929;
+    margin: 3px 0 10px;
+    display: block;
+}
+.wrap>.menu-wrap>.sand>.goods>ul li a p{
+	font-size: 13px;
+    color: #999999;
+    line-height: 21px;
+    opacity: 1;
+    width: 260px;
+    margin: 0 auto;
+    letter-spacing: -0.04em;
+    text-align: center;
+}

@@ -103,7 +103,7 @@
 }
 
 .wrap>.event-wrap{
-	background-color: gray;
+	background-color: #ddd;
 }
 
 .wrap>.event-wrap>.banner ul {
@@ -113,14 +113,7 @@
 	margin-right: 25px;
 	border-radius: 30px 0 30px 0;
 }
-/* 
-.wrap>.event-wrap>.subway a {
-	background-image: url("/images/main/bg_utilization.png");
-	width: 400px;
-	height: 300px;
-	position: relative;
-}
- */
+
 .wrap>.info-wrap ul li:before{
 	background-image: url("icon_quickmenu.png");
 	background-repeat: no-repeat;
@@ -223,7 +216,6 @@
     padding: 33px 0 8px;
 }
 .content_bottom .banner_sponsor {
-
     float: left;
     width: 270px;
     height: 300px;

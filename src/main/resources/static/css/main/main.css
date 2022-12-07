@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+.wrap>.main-wrap>.main-img{
+	
+}
+
+.wrap>.main-wrap>.main-img a{
+	background-image: url('/images/main/main_PC_1920x440_20220929024651298.jpg');
+	width: 1920px;
+	height: 440px;
+	margin: auto;
+    display: block;
+}
+
+.wrap>.main-wrap>.market{
+	float: right;
+	margin-right: 300px;
+	position: absolute;
+	top: 575px;
+	left: 50%;
+	z-index: 5;
+}
+
+.wrap>.main-wrap>.market>.find a{
+	background-color: #ffce32;
+    border-radius: 30px 0 0 0;
+    float: right;
+    width:300px;
+    height:80px;
+    transition-duration: 0.2s;
+    text-align: center;
+    line-height: 75px;
+    font-size: 22px;
+    cursor: pointer;
+}
+.wrap>.main-wrap>.market>.find a:before{
+	background: url('/images/common/icon_map.png') 0 0 no-repeat;
+	height: 37px;
+	width: 30px;
+	content: '';
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 13px;
+    position: relative;
+    top: -2px;
+}
+
+.wrap>.main-wrap>.market>.fran a{
+    background-color: #009223;
+    border-radius: 0 0 30px 0;
+    width:300px;
+    height:80px;
+    float: left;
+    text-align: center;
+    line-height: 75px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.wrap>.main-wrap>.market>.fran a:before{
+	background: url('/images/common/icon_franchise.png') 0 0 no-repeat;
+	height: 37px;
+	width: 30px;
+	content: '';
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 13px;
+    position: relative;
+    top: -2px;
+}
+.wrap >.menu-wrap>.sand h2{
+	color: #292929;
+    font-size: 40px;
+    font-weight: bold;
+    min-height: 60px;
+    background-image : url('/images/common/bul_tit.png');
+    padding: 17px 0 0 25px;
+    margin-bottom: 1px;
+    background-repeat: no-repeat;
+}
+.wrap >.menu-wrap>.sand>.menu ul li{
+	float: left;
+    position: relative;
+    margin-left: 23px;
+    padding: 0 0 0 25px;
+    border-left: 1px solid #666666;
+}
+.wrap >.menu-wrap>.sand>.menu ul li:first-child {
+	border: none;	
+}
+.wrap >.menu-wrap>.sand>.goods ul li {
+	float: left;
+    position: relative;
+    margin-left: 23px;
+    margin-top:50px;
+    margin-bottom:150px;
+    padding: 0 0 0 25px;
+}
+
+.wrap >.menu-wrap>.sand>.goods ul li img{
+	width: 260px;
+	height: 182px;
+}
+
+.wrap>.event-wrap{
+	background-color: gray;
+}
+
+.wrap>.event-wrap>.banner ul {
+	width: 500px;
+	height: 300px;
+	background-color: white;
+	margin-right: 25px;
+	border-radius: 30px 0 30px 0;
+}
+/* 
+.wrap>.event-wrap>.subway a {
+	background-image: url("/images/main/bg_utilization.png");
+	width: 400px;
+	height: 300px;
+	position: relative;
+}
+ */
+.wrap>.info-wrap ul li:before{
+	background-image: url("icon_quickmenu.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 70px;
+	height: 70px;
+}
+
+
+
+
+
+
+

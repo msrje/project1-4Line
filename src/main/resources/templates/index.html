@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ th:replace="~{layout/comm-layout :: commLayout(~{this::head}, ~{::main})}">
+ <!-- ~{fragment위치::이름} -->
+ <!--  위에 this는 생략 가능 -->
+<head>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/main/main.css">
+</head>
+<main>
+	<div class="wrap">
+		<!-- 메인 이미지 -->
+		<div class="main-wrap">
+			<!-- 이미지 -->
+			<div class="main-img center">
+				<a href="#">main</a>
+			</div>
+			<!-- 매장찾기 가맹신청 -->
+			<div class="market flex">
+				<div class="find">
+					<a><strong>매장찾기</strong></a>
+				</div>
+				<div class="fran">
+					<a><strong>가맹신청ㆍ문의</strong></a>
+				</div>
+			</div>
+		</div>
+		<!-- 서브웨이 메뉴 -->
+		<div class="menu-wrap">
+			<div class="sand">
+				<h2>Subway's Menu</h2>
+				<!-- 상품 종류 목록 -->
+				<div class="menu">
+					<ul class="flex">
+						<li>클래식</li>
+						<li>프레쉬&라이트</li>
+						<li>프리미엄</li>
+						<li>아침메뉴</li>
+					</ul>
+				</div>
+				<!-- 상품 목록 -->
+				<div class="goods">
+					<ul class="flex center">
+						<li><img src="/images/main/sandwich_cl01_01.jpg">에그마요</li>
+						<li><img src="/images/main/sandwich_cl02_01.jpg">이탈리안 비엠티</li>
+						<li><img src="/images/main/sandwich_cl04_01.jpg">비엘티</li>
+						<li><img src="/images/main/sandwich_cl06_01.jpg">햄</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 기타 이벤트 이미지 -->
+		<div class="event-wrap">
+			<div class="subway flex">
+				<a href="#"><img src="/images/main/bg_utilization.png">서브웨이 이용 방법</a>
+				<a href="#"><img src="/images/main/img_subway_history.png">서브웨이 역사</a>
+			</div>
+			<div class="banner flex">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<a href="#"><img src="/images/main/270X300_20221117044819196.jpg">광고</a>
+			</div>
+		</div>
+		<!-- 회사 정보 이미지 -->
+		<div class="info-wrap">
+			<ul class="flex center">
+				<li><a href="#">프랜차이즈</a><li>
+				<li><a href="#">지사안내</a><li>
+				<li><a href="#">광고영상</a><li>
+				<li><a href="#">고객문의</a><li>
+			</ul>
+		</div>
+	</div>	
+</main>
+</html>

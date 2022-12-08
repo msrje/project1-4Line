@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+#content{
+	padding-top: 59px;
+   	background-color: #f6f6f6;
+    padding-bottom: 130px;
+}
+.signin_wrapper {
+    margin: 20px auto;
+    width: 650px;
+    background-color: #fff;
+    padding: 86px 100px 60px;
+    box-sizing: border-box;
+    border-radius: 30px 0;
+}
+.signin_wrapper p {
+    color: #999;
+    text-align: center;
+    letter-spacing: -0.05em;
+    line-height: 26px;
+    margin-top: 22px;
+}
+.signin_wrapper h2 {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 600;
+    color: #292929;
+    text-align: center;
+    letter-spacing: -0.05em;
+}
+.signin_wrapper .signin_input {
+    margin-top: 46px;
+}
+.signin_wrapper .signin_input dl dd {
+    width: 268px;
+}
+.signin_wrapper .signin_btn .btn {
+    height: 50px;
+    width: 100% !important;
+}
+.signin_wrapper .signin_link>ul {
+    margin: 30px;
+    box-sizing: border-box;
+    display: table;
+}
+.signin_wrapper .signin_link li {
+    display: table-cell;
+    position: relative;
+}
+.signin_wrapper .signin_link li a {
+    color: #999;
+    padding: 1.5em;
+}
+.signin_wrapper .signin_link li a:first-child {
+    text-align: left;
+}
+.signin_wrapper .signin_link li:first-child:after {
+    right: 8px;
+}
+.signin_wrapper .signin_link li:last-child {
+    text-align: right;
+}
+.signin_wrapper .signin_link li:last-child:after {
+    display: none;
+}
+.signin_wrapper .signin_link li:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: -3px;
+    width: 1px;
+    height: 16px;
+    background-color: #ddd;
+}
+.signin_wrapper .signin_input .form_checkbox {
+    color: #666;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+
+.write_info_wrap .input_set {
+    overflow: hidden;
+    position: relative;
+}
+.write_info_wrap .input_set dl {
+    background-color: #fff;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+    padding: 22px 30px;
+}
+.write_info_wrap .input_set dt {
+    float: left;
+    position: relative;
+    color: #666;
+    width: 120px;
+    line-height: 35px;
+}
+.write_info_wrap .input_set dd {
+    float: left;
+    position: relative;
+}
+.write_info_wrap .input_set dd .form_text {
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.write_info_wrap .input_set dl>dd .form_text input{
+    color: #e9e9e9;
+    height: 35px;
+    margin-top: 20px;
+    line-height: 35px;
+    text-indent: 20px;
+    letter-spacing: -0.05em;
+}
+
+
+.btn.bgc_point {
+    background-color: #009223;
+    color: #fff;
+}
+.btn {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 0.5em;
+    margin-top: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    transition-duration: 0.2s;
+}
+
+.form_box {
+    overflow: hidden;
+}
+.form_box .write_info_wrap {
+    overflow: hidden;
+}
+
+.form_text {
+    display: inline-block;
+}
+.form_text input {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: #292929;
+    font-size: 16px;
+}
+
+
+.form_checkbox {
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.05em;
+}
+.form_checkbox input[type="checkbox"] {
+    height: 0;
+    opacity: 0;
+    width: 0;
+    position: absolute;
+    left: -10px;
+}
+.form_checkbox .icon {
+    width: 26px;
+    height: 26px;
+    border: 2px solid #dddddd;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    margin-right: 10px;
+}
+.form_checkbox .icon:before {
+    content: '';
+    width: 0;
+    height: 20px;
+    background: url(../images/signin/icon_checkbox.png) 0 0 no-repeat;
+    position: absolute;
+    left: 4px;
+    top: 0;
+    transition-duration: 0.2s;
+}

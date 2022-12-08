@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+ th:replace="~{layout/comm-layout :: commLayout(~{this::head}, ~{::main})}">
+<head>
+	<link rel="stylesheet" href="/css/sign/signin.css">
+</head>
+<body>
+	<main>
+		<div id="content">
+			<div class="signin_wrapper">
+				<div class="signin_tit">
+					<h2>LOGIN</h2>
+					<p>써브웨이 회원으로 로그인하시면 제공하는<br>다양한 서비스를 이용할 수 있습니다.</p>
+				</div>
+				<div class="signin_input">
+					<div class="form_box">
+						<div class="write_info_wrap">
+							<div class="input_set">
+								<dl>
+									<dt>이메일 아이디</dt>
+									<dd>
+										<span class="form_text">
+											<input class="required-value" id="username" name="username" placeholder="이메일 아이디 입력" type="text" value="">
+										</span>
+									</dd>
+									<dt>비밀번호</dt>
+									<dd>
+										<span class="form_text">
+											<input class="required-value" id="password" name="password" placeholder="비밀번호 입력" type="password">
+										</span>
+									</dd>
+								</dl>
+							</div>
+						</div>
+						<label class="form_checkbox">
+							<input id="rememberId" name="rememberId" type="checkbox">
+							<span class="icon"></span>이메일 아이디 저장
+						</label>
+					</div>
+				</div>
+				<div class="signin_btn">
+					<a class="btn bgc_point on" href="#" id="loginBtn" style="width:370px;"><span>로그인</span></a>
+					<a href="#" id="popDormantNoti"></a>
+					<a href="#" id="popDormantClosing"></a>
+					<a href="#" id="popMemberAgrNoti"></a>
+				</div>
+				<div class="signin_link">
+					<ul>
+						<li><a href="#">아이디 찾기</a></li>
+						<li><a href="#">비밀번호 찾기</a></li>
+						<li><a href="#">회원가입</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</main>
+<body>
+</html>

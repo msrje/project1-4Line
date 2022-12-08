@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <th:block th:insert = "~{layout/admin-layout :: head}" />
+    <!-- ~{경로/파일명 :: 태그} 해당하는 페이지의 css나 js를 아래에 적용 head만 가지고 옴-->
+    <link rel="stylesheet" href="/css/commons/default.css">
+</head>
+<body class="flex">
+	<th:block th:insert = "~{layout/admin-layout :: header}" />
+	<main>
+		<h1>메인 메뉴</h1>
+		<div class="wrap">
+			<p>관리자 페이지 입니다.</p>
+		</div>
+	</main>
+</body>
+</html>

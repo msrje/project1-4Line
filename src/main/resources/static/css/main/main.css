@@ -217,14 +217,70 @@
 }
 .content_bottom .banner_sponsor {
     float: left;
-    width: 270px;
+    width: 260px;
     height: 300px;
     margin-left: 30px;
-    position: absolute;
-    left: 980px;
+    position: relative;
     overflow: hidden;
     border-radius: 0 30px 0 30px;
 }
-
-
+.quick_menu {
+    text-align: center;
+    background-color: #fff;
+    padding: 40px 100px;
+}
+.quick_menu ul {
+    overflow: hidden;
+    display: inline-block;
+}
+.quick_menu ul li:first-child {
+    margin-left: 0;
+}
+.quick_menu ul li {
+    float: left;
+    margin-left: 80px;
+}
+.quick_menu ul li strong {
+    color: #292929;
+    font-size: 18px;
+    display: block;
+    margin-top: 12px;
+    letter-spacing: -0.04em;
+    text-align: left;
+}
+.quick_menu ul li span {
+    color: #999999;
+    font-size: 13px;
+    display: block;
+    margin-top: 6px;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+.quick_menu ul li a{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 70px;
+    padding-left: 70px;
+}
+.quick_menu ul li .icon {
+    background: url(/images/main/icon_quickmenu.png) no-repeat;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.quick_menu ul li.quick01 .icon {
+    background-position: 0px 0px;
+}
+.quick_menu ul li.quick02 .icon {
+    background-position: -70px 0px;
+}
+.quick_menu ul li.quick03 .icon {
+    background-position: -140px 0px;
+}
+.quick_menu ul li.quick04 .icon {
+    background-position: -210px 0px;
+}
 

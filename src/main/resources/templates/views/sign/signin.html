@@ -3,6 +3,13 @@
  th:replace="~{layout/comm-layout :: commLayout(~{this::head}, ~{::main})}">
 <head>
 	<link rel="stylesheet" href="/css/sign/signin.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$('#icon').on('click', function(){
+		  $('#form_checkbox').prop('checked', true);
+		  
+		});
+	</script>
 </head>
 <body>
 	<main>
@@ -20,7 +27,7 @@
 									<dt>이메일 아이디</dt>
 									<dd>
 										<span class="form_text">
-											<input class="required-value" id="username" name="username" placeholder="이메일 아이디 입력" type="text" value="">
+											<input class="required-value" id="username" name="username" placeholder="이메일 아이디 입력" type="text" value>
 										</span>
 									</dd>
 									<dt>비밀번호</dt>
@@ -33,7 +40,7 @@
 							</div>
 						</div>
 						<label class="form_checkbox">
-							<input id="rememberId" name="rememberId" type="checkbox">
+							<input type="checkbox" id="cbox" name="cbox">
 							<span class="icon"></span>
 							이메일 아이디 저장
 						</label>

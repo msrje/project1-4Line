@@ -6,18 +6,25 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$(".domain1").click("domain");
-			$(".domain2").click("domain");
-			/* master에 올렸어요 */
+			$(".domainInsert1").change(domainInsert);
+			$(".domainInsert2").change(domainInsert);
+			$("#passCheck").change(passwordCheck);
 		});
 		function passwordCheck(){ /* 비밀번호 확인 */
 			if($("#pass").val() != $("#passCheck").val()){
 				$(".passwordCheck").show();
 				$("#passCheck").focus();
+				$("#createbtn").attr('type', "button");
+			}else{
+				$(".passwordCheck").hide();
+				$("#createbtn").attr('type', "submit");
 			}
 		}
-		function domain(){
-			$(".passwordCheck").click("");
+		function domainInsert(){
+			var domain1=$(".domainInsert1").val()
+			var domain2=$(".domainInsert2").val()
+			$("#domain1").val(domain1);
+			$("#domain2").val(domain2);
 		}
 	</script>
 </head>
@@ -42,13 +49,13 @@
 			<div class="inputForm">
 				<h2>기본 정보 (필수 입력)</h2>
 				<!-- 입력 -->
-				<form action="#">
+				<form action="/">
 	    			<ul>
 	    				<li>
 	    					<span>아이디(이메일)</span>
-	    					<input type="text" placeholder="이메일 또는 아이디">@
-	    					<input type="text" placeholder="이메일 도메인 입력">
-	    					<select class="domain1">
+	    					<input type="text" id="email1" name="email1" placeholder="이메일 또는 아이디">@
+	    					<input type="text" id="domain1" name="domain1" placeholder="이메일 도메인 입력">
+	    					<select class="domainInsert1">
 	    						<option value="">직접입력</option>
 	    						<option value="naver.com">naver.com</option>
 	    						<option value="google.com">google.com</option>
@@ -59,9 +66,9 @@
 	    				</li>
 	    				<li>
 	    					<span>아이디(이메일)</span>
-	    					<input type="text" placeholder="이메일 또는 아이디">@
-	    					<input type="text" placeholder="이메일 도메인 입력">
-	    					<select class="domain2">
+	    					<input type="text" id="email2" name="email2" placeholder="이메일 또는 아이디">@
+	    					<input type="text" id="domain2" name="domain2" placeholder="이메일 도메인 입력">
+	    					<select class="domainInsert2">
 	    						<option value="">직접입력</option>
 	    						<option value="naver.com">naver.com</option>
 	    						<option value="google.com">google.com</option>
@@ -72,14 +79,14 @@
 	    				<li>
 	    					<span>비밀번호 입력</span>
 	    					<input type="password" id="pass" name="pass" placeholder="비밀번호">
-	    					<div><span class="passwordCheck">비밀번호가 틀렸습니다 다시 입력해주세요.</span></div>
+	    					<div><span class="passwordCheck">비밀번호가 다릅니다 다시 입력해주세요.</span></div>
 	    				</li>
 	    				<li>
 	    					<span>비밀번호 확인</span>
 	    					<input type="password" id="passCheck" name="passCheck" placeholder="비밀번호 확인">
 	    				</li>
 	    				<hr>
-	    				<li><button type="button" onclick="passwordCheck()">회원가입</button></li>
+	    				<li><button type="submit" id="createbtn">회원가입</button></li>
 	    			</ul>
 	    		</form>
     		</div>

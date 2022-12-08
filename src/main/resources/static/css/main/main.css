@@ -1,15 +1,13 @@
 @charset "UTF-8";
 
-.wrap>.main-wrap>.main-img{
-	
-}
-
-.wrap>.main-wrap>.main-img a{
-	background-image: url('/images/main/main_PC_1920x440_20220929024651298.jpg');
+.wrap>.main-wrap>ul li .main-img{
 	width: 1920px;
 	height: 440px;
-	margin: auto;
     display: block;
+}
+.wrap>.main-wrap>ul li .main-img a img{
+	margin-left:20%;
+	margin-right:20%;
 }
 
 .wrap>.main-wrap>.market{

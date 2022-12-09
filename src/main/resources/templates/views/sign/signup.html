@@ -9,15 +9,25 @@
 			$(".domainInsert1").change(domainInsert);
 			$(".domainInsert2").change(domainInsert);
 			$("#passCheck").change(passwordCheck);
+			$("#passCheck").keydown(registCheck(key));
 		});
+		function registCheck(key){
+			if(key.keyCode==13) {
+				alert("비밀번호가 일치하지 않습니다");
+			}
+		}
 		function passwordCheck(){ /* 비밀번호 확인 */
-			if($("#pass").val() != $("#passCheck").val()){
-				$(".passwordCheck").show();
-				$("#passCheck").focus();
-				$("#createbtn").attr('type', "button");
+			if($("#pass").val()!=null){
+				if($("#pass").val() != $("#passCheck").val()){
+					$(".passwordCheck").show();
+					$("#passCheck").focus();
+					$("#createbtn").attr('type', "button");
+				}else{
+					$(".passwordCheck").hide();
+					$("#createbtn").attr('type', "submit");
+				}
 			}else{
-				$(".passwordCheck").hide();
-				$("#createbtn").attr('type', "submit");
+				$("#createbtn").attr('type', "button");
 			}
 		}
 		function domainInsert(){

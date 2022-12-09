@@ -1,13 +1,74 @@
 @charset "UTF-8";
-
-.wrap>.main-wrap>ul li .main-img{
+.wrap>.main-wrap>.mainbanner li{
 	width: 1920px;
 	height: 440px;
-    display: block;
 }
-.wrap>.main-wrap>ul li .main-img a img{
-	margin-left:20%;
-	margin-right:20%;
+
+.wrap>.main-wrap>.mainbanner li .main-img1{
+	width: 100%;
+	height: 100%;
+	left:50%;
+	position: absolute;
+	margin-left: -960px;
+}
+.wrap>.main-wrap>.mainbanner li .main-img2{
+	width: 100%;
+	height: 100%;
+	left:150%;
+	position: absolute;
+	margin-left: -960px;
+}
+.wrap>.main-wrap>.mainbanner li .main-img3{
+	width: 100%;
+	height: 100%;
+	left:250%;
+	position: absolute;
+	margin-left: -960px;
+}
+.wrap>.main-wrap>.mainbanner li .main-img4{
+	width: 100%;
+	height: 100%;
+	left:350%;
+	position: absolute;
+	margin-left: -960px;
+}
+
+.wrap>.main-wrap>div{
+	float: right;
+    margin-right: 300px;
+    position: absolute;
+    top: 575px;
+    left: 50%;
+    z-index: 5;
+}
+
+.wrap>.main-wrap>div .nabcon{
+	top: -40px;
+    float: right;
+    margin-right: -410px;
+    position: absolute;
+    right: -180px;
+}
+.wrap>.main-wrap>div .nabcon li{
+	display: inline-block;
+    margin: 0 5px;
+}
+.wrap>.main-wrap>div .nabcon li>a{
+	display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    border-radius: 30px;
+    transition-duration: 0.3s;
+}
+
+.wrap>.main-wrap>div .nabcon li>a:hover{
+	background-color: #ffc300;
+    width: 30px;
 }
 
 .wrap>.main-wrap>.market{
@@ -66,20 +127,23 @@
     position: relative;
     top: -2px;
 }
+
 .wrap >.menu-wrap>.sand h2{
 	color: #292929;
     font-size: 40px;
     font-weight: bold;
     min-height: 60px;
     background-image : url('/images/common/bul_tit.png');
-    padding: 17px 0 0 25px;
+    padding: 14px 0 0 27px;
     margin-bottom: 1px;
     background-repeat: no-repeat;
-    margin-top: 80px;
-    margin-left: 25%;
+    margin-top: 10%;
+    margin-left: 15%;
 }
 .wrap >.menu-wrap>.sand>.menu ul{
+	position : relative;
 	margin-left: 60%;
+	top: -25px;
 }
 .wrap >.menu-wrap>.sand>.menu ul li{
 	float: left;

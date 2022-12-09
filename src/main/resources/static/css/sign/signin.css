@@ -34,10 +34,7 @@
 .signin_wrapper .signin_input dl dd {
     width: 268px;
 }
-.signin_wrapper .signin_btn .btn {
-    height: 50px;
-    width: 100% !important;
-}
+
 .signin_wrapper .signin_link>ul {
     margin: 30px;
     box-sizing: border-box;
@@ -113,25 +110,28 @@
     line-height: 35px;
     text-indent: 20px;
     letter-spacing: -0.05em;
+    
 }
 .write_info_wrap .input_set dl>dd .form_text input::placeholder{
     color: #dadada;
     font-size: 15px;
     font-weight: bold;
 }
-.btn.bgc_point {
-    background-color: #009223;
-    color: #fff;
+.signin_btn{
+	margin-top: 20px;
+	background-color: #009223;
+	
 }
-.btn {
+
+.signin_btn .btn span {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
-    padding-top: 0.5em;
-    margin-top: 10px;
+    margin: 20px 0;
     display: inline-block;
-    vertical-align: middle;
     transition-duration: 0.2s;
+    color: #fff;
+    width: 100% !important;
 }
 
 .form_box {

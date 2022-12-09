@@ -1,36 +1,34 @@
 @charset "UTF-8";
+body { overflow: hidden; }
+
 .wrap>.main-wrap>.mainbanner li{
-	width: 1920px;
+	width: 100%;
 	height: 440px;
 }
 
 .wrap>.main-wrap>.mainbanner li .main-img1{
 	width: 100%;
-	height: 100%;
-	left:50%;
 	position: absolute;
-	margin-left: -960px;
+	text-align: center;
+	z-index: 5;
 }
 .wrap>.main-wrap>.mainbanner li .main-img2{
 	width: 100%;
-	height: 100%;
-	left:150%;
+	left:100%;
 	position: absolute;
-	margin-left: -960px;
+	text-align: center;
 }
 .wrap>.main-wrap>.mainbanner li .main-img3{
 	width: 100%;
-	height: 100%;
-	left:250%;
+	left:200%;
 	position: absolute;
-	margin-left: -960px;
+	text-align: center;
 }
 .wrap>.main-wrap>.mainbanner li .main-img4{
 	width: 100%;
-	height: 100%;
-	left:350%;
+	left:300%;
 	position: absolute;
-	margin-left: -960px;
+	text-align: center;
 }
 
 .wrap>.main-wrap>div{
@@ -42,18 +40,18 @@
     z-index: 5;
 }
 
-.wrap>.main-wrap>div .nabcon{
+.wrap>.main-wrap>div .navcon{
 	top: -40px;
     float: right;
     margin-right: -410px;
     position: absolute;
     right: -180px;
 }
-.wrap>.main-wrap>div .nabcon li{
+.wrap>.main-wrap>div .navcon li{
 	display: inline-block;
     margin: 0 5px;
 }
-.wrap>.main-wrap>div .nabcon li>a{
+.wrap>.main-wrap>div .navcon li>a{
 	display: block;
     width: 10px;
     height: 10px;
@@ -66,7 +64,7 @@
     transition-duration: 0.3s;
 }
 
-.wrap>.main-wrap>div .nabcon li>a:hover{
+.wrap>.main-wrap>div .navcon .nav>a:hover{
 	background-color: #ffc300;
     width: 30px;
 }

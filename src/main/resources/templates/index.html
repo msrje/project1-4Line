@@ -6,6 +6,39 @@
 <head>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/main/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var auto = 100;
+		$(function(){
+			$(".nav").click(navClick);
+		});
+		
+		function navClick(){ /* 네비게이션 작동 함수 */
+			var number= $(this).val();
+			if(number == 100){
+				$(".main-img1").animate({left: '0%'});
+				$(".main-img2").animate({left: '100%'});
+				$(".main-img3").animate({left: '200%'});
+				$(".main-img4").animate({left: '300%'});
+			}else if(number == 200){
+				$(".main-img1").animate({left: '-100%'});
+				$(".main-img2").animate({left: '0%'});
+				$(".main-img3").animate({left: '100%'});
+				$(".main-img4").animate({left: '200%'});
+			}else if(number == 300){
+				$(".main-img1").animate({left: '-200%'});
+				$(".main-img2").animate({left: '-100%'});
+				$(".main-img3").animate({left: '0%'});
+				$(".main-img4").animate({left: '100%'});
+			}else if(number == 400){
+				$(".main-img1").animate({left: '-300%'});
+				$(".main-img2").animate({left: '-200%'});
+				$(".main-img3").animate({left: '-100%'});
+				$(".main-img4").animate({left: '0%'});
+				
+			}
+		}
+	</script>
 </head>
 <main>
 	<div class="wrap">
@@ -35,17 +68,17 @@
 				</li>
 			</ul>
 			<div>
-				<ul class="nabcon flex">
-					<li>
+				<ul class="navcon flex">
+					<li class="nav" value="100">
 						<a>1</a>
 					</li>
-					<li>
+					<li class="nav" value="200">
 						<a>2</a>
 					</li>
-					<li>
+					<li class="nav" value="300">
 						<a>3</a>
 					</li>
-					<li>
+					<li class="nav" value="400">
 						<a>4</a>
 					</li>
 				</ul>

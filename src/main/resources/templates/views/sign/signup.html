@@ -8,14 +8,16 @@
 		$(function(){
 			$(".domainInsert1").change(domainInsert);
 			$(".domainInsert2").change(domainInsert);
-			$("#passCheck").keydown(passwordCheck);
-			$(document).keypress(e=>{ /* enter로 인한 submit 막기 */
+			
+			/* enter로 인한 submit 막기 */
+			$(document).keypress(e=>{ 
 	            if (e.keyCode == 13)
 	                e.preventDefault();
 			});
+			$("#passCheck").keyup(passwordCheck);
 		});
 		function passwordCheck(){ /*비밀번호 , 비밀번호 확인 */
-			if($("#pass").val()!=null){
+			if($("#pass").val()!=null || $("#pass").val()!=null){
 				if($("#pass").val() != $("#passCheck").val()){
 					$(".passwordCheck").show();
 					$("#passCheck").focus();
@@ -24,8 +26,6 @@
 					$(".passwordCheck").hide();
 					$("#createbtn").attr('type', "submit");
 				}
-			}else{
-				$("#createbtn").attr('type', "button");
 			}
 		}
 		function domainInsert(){ /* 도메인 select 사용시 자동 입력 */
@@ -94,7 +94,7 @@
 	    					<input type="password" id="passCheck" name="passCheck" placeholder="비밀번호 확인">
 	    				</li>
 	    				<hr>
-	    				<li><button type="submit" id="createbtn">회원가입</button></li>
+	    				<li><button type="button" id="createbtn">회원가입</button></li>
 	    			</ul>
 	    		</form>
     		</div>

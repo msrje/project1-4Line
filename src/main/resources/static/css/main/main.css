@@ -1,5 +1,5 @@
 @charset "UTF-8";
-body { overflow: hidden; }
+body { overflow-x:hidden; }
 
 .wrap>.main-wrap>.mainbanner li{
 	width: 100%;
@@ -135,7 +135,7 @@ body { overflow: hidden; }
     padding: 14px 0 0 27px;
     margin-bottom: 1px;
     background-repeat: no-repeat;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 15%;
 }
 .wrap >.menu-wrap>.sand>.menu ul{
@@ -153,14 +153,57 @@ body { overflow: hidden; }
 .wrap >.menu-wrap>.sand>.menu ul li:first-child {
 	border: none;	
 }
+.wrap >.menu-wrap>.sand>.goods >.goodsbtn{
+	background-color: white;
+	position: absolute;
+	text-align:center;
+	height: 463px;
+	width: 100%;
+}
+.wrap >.menu-wrap>.sand>.goods >.goodsbtn>.prevbtn{
+	position:absolute;
+	z-index:5;
+	float : left;
+	left:10%;
+	top: 30%;
+	width: 50px;
+	height: 50px;
+	background-image: url('/images/main/icon_event_slider_arr.png');
+}
+.wrap >.menu-wrap>.sand>.goods >.goodsbtn>.prevbtn:hover{
+	background-position-y: -50px;	
+}
+.wrap >.menu-wrap>.sand>.goods >.goodsbtn>.nextbtn{
+	position:absolute;
+	z-index:5;
+	float : right;
+	right:10%;
+	top: 30%;
+	font-size: 40px;
+	width: 50px;
+	height: 50px;
+	background-image: url('/images/main/icon_event_slider_arr.png');
+	background-position-x: 50px;	
+}
+.wrap >.menu-wrap>.sand>.goods >.goodsbtn>.nextbtn:hover{
+	background-position-y: -50px;	
+}
+.wrap >.menu-wrap>.sand>.goods ul{
+	margin-bottom: 25%;
+}
 .wrap >.menu-wrap>.sand>.goods ul li {
 	float: left;
-    position: relative;
+    position: absolute;
     margin-left: 23px;
     margin-top:50px;
     margin-bottom:150px;
-    padding: 0 0 0 25px;
+    padding: 0 25px 0 25px;
 }
+.g0{left:15%;}
+.g1{left:32%;}
+.g2{left:49%;}
+.g3{left:66%;}
+.g4{left:115%;}
 
 .wrap >.menu-wrap>.sand>.goods ul li img{
 	width: 260px;
@@ -179,35 +222,12 @@ body { overflow: hidden; }
 	border-radius: 30px 0 30px 0;
 }
 
-.wrap>.menu-wrap>.sand>.goods>ul li a >.goodsimg1{
-	background-image: url("/images/main/sandwich_cl06_01.jpg");
+.wrap>.menu-wrap>.sand>.goods>ul li a >.goodsimg{
 	background-repeat: no-repeat;
 	background-size: contain;
 	width: 260px;
 	height: 182px;
 }
-.wrap>.menu-wrap>.sand>.goods>ul li a >.goodsimg2{
-	background-image: url("/images/main/sandwich_cl04_01.jpg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	width: 260px;
-	height: 182px;
-}
-.wrap>.menu-wrap>.sand>.goods>ul li a >.goodsimg3{
-	background-image: url("/images/main/sandwich_cl02_01.jpg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	width: 260px;
-	height: 182px;
-}
-.wrap>.menu-wrap>.sand>.goods>ul li a >.goodsimg4{
-	background-image: url("/images/main/sandwich_cl01_01.jpg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	width: 260px;
-	height: 182px;
-}
-
 
 .wrap>.menu-wrap>.sand>.goods>ul li a strong{
 	text-align:center;

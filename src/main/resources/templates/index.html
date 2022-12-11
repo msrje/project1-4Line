@@ -6,14 +6,132 @@
 <head>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/main/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var num=0;
+		var time=0;
+		var page=1;//현재페이지
+		$(function(){
+			$(".nav").click(navClick);
+			$(".prevbtn").click(prevClick);
+			$(".nextbtn").click(nextClick);
+			auto();
+		});
+		function prevClick(){//이전 클릭
+			var last = $(".goods ul li").last().val()/4;//표현할수 있는 최대페이지
+			if(last<=page)return;
+			page++;
+			$(".goods").animate({left: '+=100%' });
+		}
+		
+		function nextClick(){//다음클릭
+			var last = $(".goods ul li").last().val()/4;
+			if(last>page)return;
+			page--;
+			$(".goods").animate({left: '-=100%' });
+		}
+		function navClick(){ /* 네비게이션 작동 함수 */
+			var number= $(this).val();
+			if(number==100){
+				$(".main-img1").animate({left: '0%'});
+				$(".main-img2").animate({left: '100%'});
+				$(".main-img3").animate({left: '200%'});
+				$(".main-img4").animate({left: '300%'});
+			}else if(number==200){
+				$(".main-img1").animate({left: '-100%'});
+				$(".main-img2").animate({left: '0%'});
+				$(".main-img3").animate({left: '100%'});
+				$(".main-img4").animate({left: '200%'});
+			}else if(number==300){
+				$(".main-img1").animate({left: '-200%'});
+				$(".main-img2").animate({left: '-100%'});
+				$(".main-img3").animate({left: '0%'});
+				$(".main-img4").animate({left: '100%'});
+			}else{
+				$(".main-img1").animate({left: '-300%'});
+				$(".main-img2").animate({left: '-200%'});
+				$(".main-img3").animate({left: '-100%'});
+				$(".main-img4").animate({left: '0%'});
+			}
+			stop();
+		}
+		//////////밥먹고 버튼 바꿔
+		function auto(){
+			move();
+			time = setTimeout('auto()', 3000);
+		}
+		function move(){
+			num+=100;
+			if(num==100){
+				$(".main-img1").animate({left: '0%'});
+				$(".main-img2").animate({left: '100%'});
+				$(".main-img3").animate({left: '200%'});
+				$(".main-img4").animate({left: '300%'});
+			}else if (num==200){
+				$(".main-img1").animate({left: '-100%'});
+				$(".main-img2").animate({left: '0%'});
+				$(".main-img3").animate({left: '100%'});
+				$(".main-img4").animate({left: '200%'});
+			}else if(num==300){
+				$(".main-img1").animate({left: '-200%'});
+				$(".main-img2").animate({left: '-100%'});
+				$(".main-img3").animate({left: '0%'});
+				$(".main-img4").animate({left: '100%'});
+			}else {
+				$(".main-img1").animate({left: '-300%'});
+				$(".main-img2").animate({left: '-200%'});
+				$(".main-img3").animate({left: '-100%'});
+				$(".main-img4").animate({left: '0%'});
+				num=0;
+			}
+		}
+		function stop(){
+			clearTimeout(time);
+		}
+	</script>
 </head>
 <main>
 	<div class="wrap">
 		<!-- 메인 이미지 -->
 		<div class="main-wrap">
 			<!-- 이미지 -->
-			<div class="main-img center">
-				<a href="#">main</a>
+			<ul class="mainbanner flex">
+				<li>
+					<div class="main-img1">
+						<a href="#"><img src="/images/main/main_PC_1920x440_20220929024651298.jpg"> </a>
+					</div>
+				</li>
+				<li>
+					<div class="main-img2">
+						<a href="#"><img src="/images/main/PC 메인 배너_1920x440_20221101101135881.jpg"> </a>
+					</div>
+				</li>
+				<li>
+					<div class="main-img3">
+						<a href="#"><img src="/images/main/PC 메인 배너_1920x440_20221101101206363.jpg"> </a>
+					</div>
+				</li>
+				<li>
+					<div class="main-img4">
+						<a href="#"><img src="/images/main/main_PC_1920x440_20201006040046969.jpg"> </a>
+					</div>
+				</li>
+			</ul>
+			<div>
+				<ul class="navcon flex">
+					<li class="nav" value="100">
+						<a>1</a>
+					</li>
+					<li class="nav" value="200">
+						<a>2</a>
+					</li>
+					<li class="nav" value="300">
+						<a>3</a>
+					</li>
+					<li class="nav" value="400">
+						<a>4</a>
+					</li>
+				</ul>
 			</div>
 			<!-- 매장찾기 가맹신청 -->
 			<div class="market flex">
@@ -32,37 +150,50 @@
 				<!-- 상품 종류 목록 -->
 				<div class="menu">
 					<ul class="flex">
-						<li>클래식</li>
-						<li>프레쉬&라이트</li>
-						<li>프리미엄</li>
-						<li>아침메뉴</li>
+						<li><a href="#">클래식</a></li>
+						<li><a href="#">프레쉬&라이트</a></li>
+						<li><a href="#">프리미엄</a></li>
+						<li><a href="#">아침메뉴</a></li>
 					</ul>
 				</div>
 				<!-- 상품 목록 -->
-				<div class="goods">
+				<div class="goods flex">
+					<div class="goodsbtn flex">
+						<a class="prevbtn"></a> 
+						<a class="nextbtn"></a>
+					</div>
 					<ul class="flex center">
-						<li>
-							<a>
-								<div class="goodsimg1"></div>
+						<li class="goods g0" value="0">
+							<a href="#">
+								<div class="goodsimg"  style="background-image: url('/images/main/sandwich_cl06_01.jpg');"></div>
 								<strong>에그마요</strong>
 								<p>부드러운 달걀과 고소한 마요네즈가 만나<br>더 부드러운 스테디셀러</p>
 							</a>
 						</li>
-						<li>
-							<a>
-								<div class="goodsimg2"></div>
+						<li class="goods g1" value="1">
+							<a href="#">
+								<div class="goodsimg"  style="background-image: url('/images/main/sandwich_cl04_01.jpg');"></div>
 								<strong>이탈리안 비엠티</strong>
 								<p>부드러운 달걀과 고소한 마요네즈가 만나<br>더 부드러운 스테디셀러</p>
 							</a>
-						</li><li>
-							<a>
-								<div class="goodsimg3"></div>
+						</li>
+						<li class="goods g2" value="2">
+							<a href="#">
+								<div class="goodsimg"  style="background-image: url('/images/main/sandwich_cl02_01.jpg');"></div>
 								<strong>비엘티</strong>
 								<p>부드러운 달걀과 고소한 마요네즈가 만나<br>더 부드러운 스테디셀러</p>
 							</a>
-						</li><li>
-							<a>
-								<div class="goodsimg4"></div>
+						</li>
+						<li class="goods g3" value="3">
+							<a href="#">
+								<div class="goodsimg"  style="background-image: url('/images/main/sandwich_cl01_01.jpg');"></div>
+								<strong>햄</strong>
+								<p>부드러운 달걀과 고소한 마요네즈가 만나<br>더 부드러운 스테디셀러</p>
+							</a>
+						</li>
+						<li class="goods g4" value="4">
+							<a href="#">
+								<div class="goodsimg"  style="background-image: url('/images/main/sandwich_cl05_01.jpg');"></div>
 								<strong>햄</strong>
 								<p>부드러운 달걀과 고소한 마요네즈가 만나<br>더 부드러운 스테디셀러</p>
 							</a>

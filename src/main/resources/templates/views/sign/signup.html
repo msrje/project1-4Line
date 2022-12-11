@@ -3,6 +3,23 @@
  th:replace="~{layout/comm-layout :: commLayout(~{this::head}, ~{::main})}">
 <head>
 	<link rel="stylesheet" href="/css/sign/signup.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".domain1").click("domain");
+			$(".domain2").click("domain");
+			/* master에 올렸어요 */
+		});
+		function passwordCheck(){ /* 비밀번호 확인 */
+			if($("#pass").val() != $("#passCheck").val()){
+				$(".passwordCheck").show();
+				$("#passCheck").focus();
+			}
+		}
+		function domain(){
+			$(".passwordCheck").click("");
+		}
+	</script>
 </head>
 <main>
 	<div class="signupWrap page-tit">
@@ -14,8 +31,8 @@
 					<li class="step1">
 						<span>step1</span>
 					</li>
-					<li class="step2 col"><span>step2</span></li>
-					<li class="step3"><span>step3</span></li>
+					<li class="step2"><span>step2</span></li>
+					<li class="step3 col"><span>step3</span></li>
 					<li class="step4"><span>step4</span></li>
 				</ul>
 			</div>
@@ -30,38 +47,39 @@
 	    				<li>
 	    					<span>아이디(이메일)</span>
 	    					<input type="text" placeholder="이메일 또는 아이디">@
-	    					<input type="text" placeholder="이메일 또는 아이디">
-	    					<select>
-	    						<option>직접입력</option>
-	    						<option>naver.com</option>
-	    						<option>google.com</option>
-	    						<option>daum.net</option>
-	    						<option>nate.com</option>
+	    					<input type="text" placeholder="이메일 도메인 입력">
+	    					<select class="domain1">
+	    						<option value="">직접입력</option>
+	    						<option value="naver.com">naver.com</option>
+	    						<option value="google.com">google.com</option>
+	    						<option value="daum.net">daum.net</option>
+	    						<option value="nate.com">nate.com</option>
 	    					</select>
 	    					<button>중복확인</button>
 	    				</li>
 	    				<li>
 	    					<span>아이디(이메일)</span>
 	    					<input type="text" placeholder="이메일 또는 아이디">@
-	    					<input type="text" placeholder="이메일 또는 아이디">
-	    					<select>
-	    						<option>직접입력</option>
-	    						<option>naver.com</option>
-	    						<option>google.com</option>
-	    						<option>daum.net</option>
-	    						<option>nate.com</option>
+	    					<input type="text" placeholder="이메일 도메인 입력">
+	    					<select class="domain2">
+	    						<option value="">직접입력</option>
+	    						<option value="naver.com">naver.com</option>
+	    						<option value="google.com">google.com</option>
+	    						<option value="daum.net">daum.net</option>
+	    						<option value="nate.com">nate.com</option>
 	    					</select>
 	    				</li>
 	    				<li>
 	    					<span>비밀번호 입력</span>
-	    					<input type="password" name="pass" placeholder="비밀번호">
+	    					<input type="password" id="pass" name="pass" placeholder="비밀번호">
+	    					<div><span class="passwordCheck">비밀번호가 틀렸습니다 다시 입력해주세요.</span></div>
 	    				</li>
 	    				<li>
 	    					<span>비밀번호 확인</span>
-	    					<input type="password" name="pass" placeholder="비밀번호 확인">
+	    					<input type="password" id="passCheck" name="passCheck" placeholder="비밀번호 확인">
 	    				</li>
 	    				<hr>
-	    				<li><button type="button">회원가입</button></li>
+	    				<li><button type="button" onclick="passwordCheck()">회원가입</button></li>
 	    			</ul>
 	    		</form>
     		</div>

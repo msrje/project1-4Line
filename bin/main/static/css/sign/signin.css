@@ -1,10 +1,11 @@
+@charset "UTF-8";
+
 #content{
 	padding-top: 59px;
    	background-color: #f6f6f6;
     padding-bottom: 130px;
 }
 .signin_wrapper {
-	
     margin: 0 auto;
     width: 650px;
     background-color: #fff;
@@ -30,12 +31,14 @@
 .signin_wrapper .signin_input {
     margin-top: 46px;
 }
+
 .form_box {
     overflow: hidden;
 }
 .form_box .write_info_wrap {
     overflow: hidden;
 }
+
 .write_info_wrap .input_set {
     overflow: hidden;
     position: relative;
@@ -49,6 +52,7 @@
 .write_info_wrap .input_set dt {
     float: left;
     position: relative;
+
     font-weight: 300;
     width: 120px;
     line-height: 35px;
@@ -61,6 +65,7 @@
     height: 50px;
     width: 100% !important;
 }
+
 .btn.bgc_point {
     background-color: #009223;
     color: #fff;
@@ -75,6 +80,7 @@
     vertical-align: middle;
     transition-duration: 0.2s;
 }
+
 .signin_wrapper .signin_link li a {
     color: #999;
     letter-spacing: -0.05em;
@@ -132,6 +138,7 @@
     text-indent: 20px;
     letter-spacing: -0.05em;
 }
+
 .form_text input {
     width: 100%;
     border: 0;
@@ -139,6 +146,7 @@
     color: #292929;
     font-size: 16px;
 }
+
 .form_checkbox input[type="checkbox"] {
     height: 0;
     opacity: 0;
@@ -161,6 +169,7 @@
     color: #666;
     margin-top: 10px;
 }
+
 .form_checkbox {
     display: inline-block;
     cursor: pointer;
@@ -171,6 +180,8 @@
     line-height: 26px;
     letter-spacing: -0.05em;
 }
+
+
 .form_checkbox .icon {
     width: 26px;
     height: 26px;
@@ -185,12 +196,15 @@
     content: '';
     width: 0;
     height: 20px;
+
     background: url(../images/common/icon_checkbox.png) 0 0 no-repeat;
+
     position: absolute;
     left: 4px;
     top: 0;
     transition-duration: 0.2s;
 }
+
 .signin_wrapper .signin_input .form_checkbox {
     font-weight: 300;
     color: #666;

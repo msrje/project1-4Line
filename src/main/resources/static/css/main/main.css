@@ -210,6 +210,13 @@ body { overflow-x:hidden; }
 	height: 182px;
 }
 
+.wrap>.menu-wrap>.sand>.goods>ul li a >.goodsimg{
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 260px;
+	height: 182px;
+}
+
 .wrap>.event-wrap{
 	background-color: #ddd;
 }

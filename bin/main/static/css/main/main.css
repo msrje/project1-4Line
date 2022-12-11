@@ -77,11 +77,6 @@
     padding: 17px 0 0 25px;
     margin-bottom: 1px;
     background-repeat: no-repeat;
-    margin-top: 80px;
-    margin-left: 25%;
-}
-.wrap >.menu-wrap>.sand>.menu ul{
-	margin-left: 60%;
 }
 .wrap >.menu-wrap>.sand>.menu ul li{
 	float: left;
@@ -119,28 +114,12 @@
 	border-radius: 30px 0 30px 0;
 }
 
-
 .wrap>.info-wrap ul li:before{
 	background-image: url("icon_quickmenu.png");
-
 	background-repeat: no-repeat;
 	background-size: contain;
-	width: 260px;
-	height: 182px;
-}
-.wrap>.menu-wrap>.sand>.goods>ul li a >.goodsimg3{
-	background-image: url("/images/main/sandwich_cl02_01.jpg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	width: 260px;
-	height: 182px;
-}
-.wrap>.menu-wrap>.sand>.goods>ul li a >.goodsimg4{
-	background-image: url("/images/main/sandwich_cl01_01.jpg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	width: 260px;
-	height: 182px;
+	width: 70px;
+	height: 70px;
 }
 
 .section_subway {
@@ -304,5 +283,4 @@
 .quick_menu ul li.quick04 .icon {
     background-position: -210px 0px;
 }
-
 

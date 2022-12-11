@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+ th:replace="~{layout/comm-layout :: commLayout(~{this::head}, ~{::main})}">
+<head>
+	<link rel="stylesheet" href="/css/sign/signup.css">
+</head>
+<main>
+	<div class="signupWrap page-tit">
+		<div class="nameArea">
+			<h1 class="name">회원가입</h1>
+			<div class="stepImg">
+				<!-- step img -->
+				<ul class="flex center">
+					<li class="step1">
+						<span>step1</span>
+					</li>
+					<li class="step2 col"><span>step2</span></li>
+					<li class="step3"><span>step3</span></li>
+					<li class="step4"><span>step4</span></li>
+				</ul>
+			</div>
+		</div>
+		<h3><strong>Step1. </strong> 회원가입</h3>
+		<div class="inputArea">
+			<div class="inputForm">
+				<h2>기본 정보 (필수 입력)</h2>
+				<!-- 입력 -->
+				<form action="#">
+	    			<ul>
+	    				<li>
+	    					<span>아이디(이메일)</span>
+	    					<input type="text" placeholder="이메일 또는 아이디">@
+	    					<input type="text" placeholder="이메일 또는 아이디">
+	    					<select>
+	    						<option>직접입력</option>
+	    						<option>naver.com</option>
+	    						<option>google.com</option>
+	    						<option>daum.net</option>
+	    						<option>nate.com</option>
+	    					</select>
+	    					<button>중복확인</button>
+	    				</li>
+	    				<li>
+	    					<span>아이디(이메일)</span>
+	    					<input type="text" placeholder="이메일 또는 아이디">@
+	    					<input type="text" placeholder="이메일 또는 아이디">
+	    					<select>
+	    						<option>직접입력</option>
+	    						<option>naver.com</option>
+	    						<option>google.com</option>
+	    						<option>daum.net</option>
+	    						<option>nate.com</option>
+	    					</select>
+	    				</li>
+	    				<li>
+	    					<span>비밀번호 입력</span>
+	    					<input type="password" name="pass" placeholder="비밀번호">
+	    				</li>
+	    				<li>
+	    					<span>비밀번호 확인</span>
+	    					<input type="password" name="pass" placeholder="비밀번호 확인">
+	    				</li>
+	    				<hr>
+	    				<li><button type="button">회원가입</button></li>
+	    			</ul>
+	    		</form>
+    		</div>
+		</div>
+	</div>
+</main>
+</html>

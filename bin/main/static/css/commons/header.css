@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+
+#wrap{
+	min-width:1280px;
+}
+
+.content{
+	max-width:1170px; 
+	margin:0 auto; 
+	position:relative;
+}
+
+/*///////////////////////////header////////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+#header{
+	border-top:5px solid #009223;
+	height:165px; 
+	left:0; 
+	width:100%; 
+	top:0; 
+	z-index:99;
+	 background-color:#fff; 
+	 min-width:1280px;
+}
+
+#header:after{
+	content:''; 
+	position:absolute;
+	top:164px; 
+	background-color:#e5e5e5; 
+	left:0; 
+	width:100%; 
+	height:1px;
+}
+#header .logo{
+	position:absolute; 
+	left:50%; 
+	top:35px; 
+	margin-left:-101px;  
+	transition-duration:0.3s
+}
+#header .logo a{
+	display:block; 
+	background:url("/images/common/logo_w.png") 0 0 no-repeat; 
+	width:202px;
+	height:40px; 
+	overflow:hidden; 
+	font-size:0px; 
+	line-height:0px; 
+	text-indent:-9999px;
+}
+
+/*//////////////////////////menu///////////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+.menu_wrap{
+	text-align:center; 
+	position:absolute; 
+	left:0; width:100%; 
+	top:98px; 
+	text-align:center;
+}
+
+.menu_wrap >.dep1{
+	display:inline-block;
+}
+.menu_wrap >.dep1 >li{
+	float:left; 
+	width:165px; 
+	position:relative;
+} 
+.menu_wrap >.dep1 >li a{
+	font-size:18px; 
+	color:#292929; 
+	font-weight:bold; 
+	letter-spacing:-0.04em; 
+	position:relative; 
+	z-index:3; 
+	padding-top:20px;  
+	display:block;
+}
+
+.menu_wrap .dep2{
+	overflow:hidden; 
+	position:absolute; 
+	left:0; 
+	top:-20px; 
+	width:100%; 
+	padding-top:87px; 
+	z-index:2; 
+/* 	opacity:0; */
+	background: white;
+	display: none;
+}
+
+.menu_wrap .dep2 li a{
+	font-size:15px; 
+	color:#666666; /*배경이 흰색이라 티가 안나서 임시로 회색으로 설정*/
+ 	padding:8px 0 9px; 
+} 
+
+.menu_wrap .dep1 > li > a:hover ~.dep2 {
+	display: block;
+}
+
+/* .menu_wrap .dep2 li a:hover,
+.menu_wrap .dep2 li a.active{
+	color:#009223; 
+	text-decoration:underline;
+
+
+.menu_wrap >.dep1 >li:hover a:after,
+.menu_wrap >.dep1 >li a.active:after{
+	opacity:1; 
+	bottom:-15px;
+}
+.menu_wrap >.dep1 >li a.active,
+.menu_wrap >.dep1 >li:hover a{
+	color:#009223;
+}  */
+
+
+
+
+/*////////////////////login,signin/////////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+#header .util_menu {
+	position:absolute; 
+	right:25px; 
+	top:40px;
+}
+#header .util_menu ul li {
+	float:left; 
+	position:relative;
+}
+#header .util_menu ul li ~ li {
+	margin-left:30px;
+}
+#header .util_menu ul li a {
+	display:block; 
+	color:#666666; 
+	font-size:13px; 
+	font-weight:normal; 
+	line-height:30px; 
+	height:30px;
+}
+
+#header .util_menu .before_sign ~ .before_sign::before {/*로그인 회원가입 가운데 점*/
+	background-color:#ddd; 
+	content:''; 
+	display:block; 
+	border-radius:50px; 
+	position:absolute; 
+	left:-16px; 
+	top:50%; 
+	margin-top:-2px; 
+	height:3px; 
+	width:3px;
+}

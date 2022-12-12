@@ -70,7 +70,8 @@
     background-color: #ddd;
 }
 .signin_wrapper .signin_input .form_checkbox {
-    color: #666;
+    color: #666666d9;
+    font-weight: 600;
     margin-top: 15px;
     margin-bottom: 20px;
 }

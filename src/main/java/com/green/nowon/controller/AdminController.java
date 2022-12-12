@@ -10,10 +10,6 @@ public class AdminController {
 	public String admin() {
 		return "admin/default";
 	}
-	@GetMapping("/signin")
-	public String signin() {return "views/sign/signin";}
-	@GetMapping("/signup")
-	public String signup() {return "views/sign/signup";}
 	
 	@GetMapping("/admin/items")
 	public String list() {

@@ -15,9 +15,9 @@
 .admin{
 	font-size: 22px;
 	position:absolute; 
-	left: 31.5%; 
+	left: 32%; 
 	top:20px; 
-	background-color: green;
+	background-color: #ff650b;
 }
 
 .admin > a{
@@ -62,12 +62,9 @@
 }
 
 .menu_wrap .dep1 > li:hover > a {
-	color: green; /* 마우스 호버했을때 글씨 색깔 변경*/
+	color: #ff650b; /* 마우스 호버했을때 글씨 색깔 변경*/
 }
 
-.menu_wrap .dep1 > li:hover > .dep2 {
-	display: block; /* 메뉴바 내리기 */
-}
 .menu_wrap .dep1 > li > a {
 	display: block; /* a 태그가 li영역만큼 길어지게 하기 위해서 */
 	font-size:18px; 
@@ -79,25 +76,11 @@
 	padding-top:20px;  
 }
 
-.menu_wrap .dep2{
-	display: none; /* 밑에 서브메뉴 가리기 */
-	background: white; /* 배경 흰색 */
-	position:absolute; 
-	left:0; 
-	top:-20px; 
-	width:100%; 
-	padding-top:87px; 
-	z-index:2; 
-	
-}
-.menu_wrap .dep2 a {
-	display: block;
-	padding: 8px 0 9px; 
-	font-size: 15px;
-	color: #808080; 
-}
-.menu_wrap .dep2 a:hover {
-	text-decoration: underline; /* 마우스 호버했을때 밀줄*/
-	color: green; /* 마우스 호버했을때 글씨 색깔 변경*/
-}
+
+/*/////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////*/
+
+
+
 

@@ -120,7 +120,7 @@
 }
 .signin_btn{
 	margin-top: 20px;
-	background-color: #009223;
+	background-color: rgb(255 101 11);
 	
 }
 
@@ -173,6 +173,7 @@
 }
 .form_checkbox input[type=checkbox]:checked + .icon { 
 	background-image: url('/images/signin/icon_checkbox.png'); 
+	background-repeat: no-repeat;
     
 }
 .form_checkbox .icon {

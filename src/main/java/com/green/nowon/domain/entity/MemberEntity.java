@@ -12,7 +12,7 @@ import javax.persistence.Table;
 		sequenceName = "seq_member", initialValue = 1, allocationSize = 1)
 @Table(name = "member")
 @Entity
-public class MemberEntity {
+public class MemberEntity extends BaseDateEntity{
 	
 	@GeneratedValue(generator = "seq_gen_member", strategy = GenerationType.SEQUENCE)
 	@Id

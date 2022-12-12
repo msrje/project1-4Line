@@ -123,7 +123,7 @@
 	background-color: rgb(255 101 11);
 	
 }
-
+/* 
 .signin_btn .btn span {
     font-size: 18px;
     font-weight: bold;
@@ -134,7 +134,17 @@
     color: #fff;
     width: 100% !important;
 }
-
+ */
+.signin_btn button{
+	margin-left: 124px;
+	color:white;	
+	width:170px;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: rgb(255 101 11);
+	height:50px;
+	border: 2px solid rgb(255 101 11);
+}
 .form_box {
     overflow: hidden;
 }
@@ -186,4 +196,3 @@
     vertical-align: top;
     margin-right: 10px;
 }
-

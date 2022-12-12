@@ -17,7 +17,7 @@
 /*/////////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////////*/
 #header{
-	border-top:5px solid #009223;
+	border-top:5px solid #ff650b;
 	height:165px; 
 	left:0; 
 	width:100%; 
@@ -83,7 +83,7 @@
 }
 
 .menu_wrap .dep1 > li:hover > a {
-	color: green; /* 마우스 호버했을때 글씨 색깔 변경*/
+	color: #ff650b; /* 마우스 호버했을때 글씨 색깔 변경*/
 }
 
 .menu_wrap .dep1 > li:hover > .dep2 {
@@ -119,7 +119,7 @@
 }
 .menu_wrap .dep2 a:hover {
 	text-decoration: underline; /* 마우스 호버했을때 밀줄*/
-	color: green; /* 마우스 호버했을때 글씨 색깔 변경*/
+	color: #ff650b; /* 마우스 호버했을때 글씨 색깔 변경*/
 }
 
 
@@ -162,4 +162,5 @@
 	margin-top:-2px; 
 	height:3px; 
 	width:3px;
+	
 }

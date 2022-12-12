@@ -1,59 +1,46 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
- th:fragment="adminLayout(head, main)">
+<html xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
     <title>관리자페이지</title>
-    <link rel="stylesheet" href="/css/commons/default.css">
     <link rel="stylesheet" href="/css/commons/common.css">
-    <th:block th:replace="${head}"/>
+    <link rel="stylesheet" href="/css/commons/admin-layout.css">
 </head>
 <header>
-	<div id="wrap">
-		<div id="header">
-			<div class="content">
-				<h1 class="admin">
-					<a href="/admin">SUBWAY 관리자페이지</a>
-				</h1>
-				<div class="menu_wrap">
-					<ul class="dep1">
-						<li>
-							<a href="#none">상품</a>
-							<ul class="dep2" >
-								<li><a href="/admin/items">리스트</a></li>
-								<li><a href="/admin/items/reg">등록</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#none">FAQ</a>
-							<ul class="dep2" >
-								<li><a href="#">리스트</a></li>
-								<li><a href="#">등록</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#none">비주얼이미지</a>
-							<ul class="dep2" >
-								<li><a href="#">리스트</a></li>
-								<li><a href="#">등록</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#none">타임세일</a>
-							<ul class="dep2" >
-								<li><a href="#">리스트</a></li>
-								<li><a href="#">등록</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+   	<h1>좌측메뉴</h1>
+   	<div class="wrap">
+   		<ul>
+ 
+   			<li>
+   				<a href="/admin">관리자HOME</a>
+   			</li>
+   			<li>
+   				<dl>
+   					<dt>상품</dt>
+   					<dd>
+   						<a href="/admin/goods">상품등록</a>
+   					</dd>
+   					<dd>
+   						<a href="/admin">상품리스트</a>
+   					</dd>
+   				</dl>
+   			</li>
+   			<li>
+   				<dl>
+   					<dt>주문</dt>
+   					<dd><a href="/admin">주문관리</a></dd>
+   				</dl>
+   			</li>
+   			<li>
+   				<dl>
+   					<dt>회원</dt>
+   					<dd><a href="/admin">회원관리</a></dd>
+   				</dl>
+   			</li>
+   			<li>
+   				<a href="/">SHPPING MALL</a>
+   			</li>
+   		</ul>
+   	</div>
 </header>
-<th:block th:replace="${main}"/>
-<footer>
-</footer>
-</body>
-</html>
 </html>

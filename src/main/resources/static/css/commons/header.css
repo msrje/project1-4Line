@@ -39,15 +39,15 @@
 #header .logo{
 	position:absolute; 
 	left:50%; 
-	top:35px; 
+	top:10px; 
 	margin-left:-101px;  
 	transition-duration:0.3s
 }
 #header .logo a{
 	display:block; 
-	background:url("/images/common/logo_w.png") 0 0 no-repeat; 
+	background:url("/images/common/logo3_w.png") 0 0 no-repeat; 
 	width:202px;
-	height:40px; 
+	height:200px; 
 	overflow:hidden; 
 	font-size:0px; 
 	line-height:0px; 

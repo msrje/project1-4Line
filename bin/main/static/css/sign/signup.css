@@ -167,7 +167,15 @@ main{
 	height:50px;
 	border: 2px solid #009223;
 }
-
+.signupWrap>.inputArea>.inputForm form ul>li>div>.passwordCheck {
+	display:none;
+	color: rgba(255,0,0,0.75);
+	top: 20px;
+	width:400px;
+	float:right;
+	font-weight:normal;
+	font-size: 16px;
+}
 input{
 	display:inline-block;
 	width: 195px;
@@ -193,7 +201,13 @@ select:focus {
 	outline:none;
 }
 
-
+.page-tit{
+    padding: 50px 0;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+}
 
 
 

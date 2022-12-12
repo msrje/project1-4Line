@@ -338,7 +338,7 @@ body { overflow-x:hidden; }
     margin-left: 30px;
     position: relative;
     overflow: hidden;
-    border-radius: 0 30px 0 30px;
+    border-radius: 0 30px 0 50px;
 }
 .quick_menu {
     text-align: center;
@@ -379,25 +379,38 @@ body { overflow-x:hidden; }
     height: 70px;
     padding-left: 70px;
 }
-.quick_menu ul li .icon {
-    background: url(/images/main/icon_quickmenu.png) no-repeat;
-    width: 70px;
+
+.quick_menu ul li.quick01 .icon {
+    background: url(/images/main/house-flag-solid.svg) 0 0 no-repeat;
+    width: 60px;
     height: 70px;
     position: absolute;
     left: 0;
     top: 0;
 }
-.quick_menu ul li.quick01 .icon {
-    background-position: 0px 0px;
-}
 .quick_menu ul li.quick02 .icon {
-    background-position: -70px 0px;
+    background: url(/images/main/map-location-dot-solid.svg) 0 0 no-repeat;
+    width: 60px;
+    height: 70px;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 .quick_menu ul li.quick03 .icon {
-    background-position: -140px 0px;
+    background: url(/images/main/youtube.svg) 0 0 no-repeat;
+    width: 60px;
+    height: 70px;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 .quick_menu ul li.quick04 .icon {
-    background-position: -210px 0px;
+    background: url(/images/main/comments-regular.svg) 0 0 no-repeat;
+ 	width: 60px;
+    height: 70px;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 

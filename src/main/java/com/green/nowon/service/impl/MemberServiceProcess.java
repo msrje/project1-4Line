@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.green.nowon.domain.dto.member.MemberInsertDTO;
 import com.green.nowon.domain.entity.MemberEntityRepository;
+import com.green.nowon.security.MyRole;
 import com.green.nowon.service.MemberService;
 
 @Service
@@ -16,11 +17,13 @@ public class MemberServiceProcess implements MemberService {
 	private MemberEntityRepository mrepo;
 	
 	@Autowired
-	PasswordEncoder pe;
+	private PasswordEncoder pe;
 	
 	@Override
 	public void save(MemberInsertDTO dto) {
-		mrepo.save(dto.entity(pe));
+
+		Mrepo.save(dto.entity(pe).addRole(MyRole.USER));
+
 	}
 
 }

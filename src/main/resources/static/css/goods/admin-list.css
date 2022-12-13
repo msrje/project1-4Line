@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+td{
+	padding: 5px;
+}
+
+td:nth-child(1){
+	width: 50px;
+}
+td:nth-child(2){
+	width: 100px;
+}
+td:nth-child(3){
+	width: 180px;
+}
+td:nth-child(4){
+	width: 180px;
+}
+td:nth-child(5){
+	width: 150px;
+}
+td:nth-child(6){
+	width: 100px;
+}
+td:nth-child(7){
+	width: 200px;
+}
+tr:nth-child(even){
+	background: rgba(255, 101, 11, 10%);
+}

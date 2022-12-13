@@ -10,16 +10,17 @@ import com.green.nowon.service.MemberService;
 
 @Service
 public class MemberServiceProcess implements MemberService {
-
+	
+	//DB에 접속하여 MemberEntity에 접근하는 DAO객체 필요
 	@Autowired
-	private MemberEntityRepository Mrepo;
+	private MemberEntityRepository mrepo;
 	
 	@Autowired
 	PasswordEncoder pe;
 	
 	@Override
 	public void save(MemberInsertDTO dto) {
-		Mrepo.save(dto.entity(pe));
+		mrepo.save(dto.entity(pe));
 	}
 
 }

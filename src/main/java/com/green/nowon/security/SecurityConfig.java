@@ -41,6 +41,8 @@ public class SecurityConfig {
  							.failureUrl("/members/signin")//실패시 이동 url
  							.permitAll()
  							)
+ 					.logout(logout->logout
+ 							.logoutSuccessUrl("/members/signin"))
  					.csrf(csrf->csrf.disable())
  					
  					;

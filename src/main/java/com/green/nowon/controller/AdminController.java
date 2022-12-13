@@ -11,4 +11,8 @@ public class AdminController {
 		return "admin/default";
 	}
 	
+	@GetMapping("/admin/goods/list")
+	public String list() {
+		return "admin/admin-list";
+	}
 }

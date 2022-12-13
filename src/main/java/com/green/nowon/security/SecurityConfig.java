@@ -29,7 +29,7 @@ public class SecurityConfig {
  			.authorizeRequests(authorize -> authorize
  						.antMatchers("/css/**","/images/**").permitAll()
  						.antMatchers("/","/members/signup","/members/join").permitAll()
- 						.antMatchers("/admin/**").permitAll()
+ 						.antMatchers("/admin/**").hasAnyRole("ROLE_ADMIN")
  						.anyRequest().authenticated()
  					)
  					.formLogin(formLogin->formLogin
@@ -41,6 +41,8 @@ public class SecurityConfig {
  							.failureUrl("/members/signin")//실패시 이동 url
  							.permitAll()
  							)
+ 					.logout(logout->logout
+ 							.logoutSuccessUrl("/members/signin"))
  					.csrf(csrf->csrf.disable())
  					
  					;

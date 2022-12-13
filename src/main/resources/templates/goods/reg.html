@@ -63,14 +63,14 @@
     <main>
     	<h1>메인컨텐츠</h1>
     	<div class="wrap">
-    		<p>상품등록 페이지</p>
-    		<form>
+    		<p class="pagetitle">[상품등록 페이지]</p>
+    		<form class="form">
 	    		<table class="all">
-	    			<tr>
+	    			<tr class="dep1">
 	    				<td>상품명</td>
 	    				<td><input type="text" name="title" placeholder="상품명을 입력하세요"></td>
 	    			</tr>
-	    			<tr>
+	    			<tr class="dep1">
 	    				<td>대표이미지</td>
 	    				<td>
 	    					<div>
@@ -80,7 +80,7 @@
 	    					</div>
 	    				</td>
 	    			</tr>
-	    			<tr>
+	    			<tr class="dep1">
 	    				<td>추가이미지</td>
 	    				<td class="flex" id="addimg-wrap">
 	    					<div class="addimg">
@@ -90,21 +90,21 @@
 	    					<!-- 여기에 동적 삽입 -->
 	    				</td>
 	    			</tr>
-	    			<tr>
+	    			<tr class="dep1">
 	    				<td>가격</td>
 	    				<td><input type="text" name="price" placeholder="가격을 입력하세요"></td>
 	    			</tr>
-	    			<tr>
+	    			<tr class="dep1">
 	    				<td>수량</td>
 	    				<td><input type="text" name="stock" placeholder="판매수량을 입력하세요"></td>
 	    			</tr>
-	    			<tr>
-	    				<td colspan="2">상세정보</td>
+	    			<tr >
+	    				<td colspan="2">↓상세정보↓</td>
 	    			</tr>
-	    			<tr>
+	    			<tr> 
 	    				<td colspan="2"><textarea id="summernote"></textarea></td>
 	    			</tr>
-	    			<tr>
+	    			<tr class="dep2">
 	    				<td colspan="2">
 	    					<button>상품등록</button>
 	    				</td>
@@ -115,7 +115,3 @@
     </main>
 </body>
 </html>
-
-
-
-

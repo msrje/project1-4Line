@@ -22,7 +22,7 @@ public class MemberServiceProcess implements MemberService {
 	@Override
 	public void save(MemberInsertDTO dto) {
 
-		Mrepo.save(dto.entity(pe).addRole(MyRole.USER));
+		mrepo.save(dto.entity(pe).addRole(MyRole.USER));
 
 	}
 

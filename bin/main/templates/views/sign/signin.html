@@ -19,36 +19,38 @@
 					<h2>LOGIN</h2>
 					<p>써브웨이 회원으로 로그인하시면 제공하는<br>다양한 서비스를 이용할 수 있습니다.</p>
 				</div>
-				<div class="signin_input">
-					<div class="form_box">
-						<div class="write_info_wrap">
-							<div class="input_set">
-								<dl>
-									<dt>이메일 아이디</dt>
-									<dd>
-										<span class="form_text">
-											<input class="required-value" id="username" name="username" placeholder="이메일 아이디 입력" type="text">
-										</span>
-									</dd>
-									<dt>비밀번호</dt>
-									<dd>
-										<span class="form_text">
-											<input class="required-value" id="password" name="password" placeholder="비밀번호 입력" type="password">
-										</span>
-									</dd>
-								</dl>
+				<form action="/members/signin" method="post">
+					<div class="signin_input">
+						<div class="form_box">
+							<div class="write_info_wrap">
+								<div class="input_set">
+									<dl>
+										<dt>이메일 아이디</dt>
+										<dd>
+											<span class="form_text">
+												<input type="text" name="email" placeholder="이메일 아이디 입력" >
+											</span>
+										</dd>
+										<dt>비밀번호</dt>
+										<dd>
+											<span class="form_text">
+												<input type="password" name="pass" placeholder="비밀번호 입력" >
+											</span>
+										</dd>
+									</dl>
+								</div>
 							</div>
+							<label class="form_checkbox">
+								<input type="checkbox" id="cbox" name="cbox">
+								<span class="icon"></span>
+								이메일 아이디 저장
+							</label>
 						</div>
-						<label class="form_checkbox">
-							<input type="checkbox" id="cbox" name="cbox">
-							<span class="icon"></span>
-							이메일 아이디 저장
-						</label>
 					</div>
-				</div>
-				<div class="signin_btn">
-					<a class="btn" href="/" id="loginBtn"><span>로그인</span></a>
-				</div>
+					<div class="signin_btn">
+						<button>로그인</button>
+					</div>
+				</form>
 				<div class="signin_link">
 					<ul> 
 						<li>
@@ -58,7 +60,7 @@
 						<a href="#" id="findPw">비밀번호 찾기</a>
 						</li>
 						<li>
-						<a href="/signup">회원가입</a>
+						<a href="/members/signup">회원가입</a>
 						</li>
 					</ul>
 				</div>

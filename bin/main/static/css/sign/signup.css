@@ -76,8 +76,8 @@ main{
 }
 
 .signupWrap>h3{
-	color: rgba(255, 195, 0,1);
-	background-color: rgba(88, 0, 108,0.8);
+	color: rgba(0, 0, 0, 0.95);
+	background-color: rgb(255 101 11);
 	font-size: 24px;
 	height: 70px;
 	line-height: 70px;
@@ -142,7 +142,7 @@ main{
 	border-top:white;
 	border-bottom:white;
 	background-color:white;
-	color: #009223;
+	color: rgb(134, 209, 15);
 	font-size: 16px;
 	font-family: font_ns, sans-serif;
 }
@@ -162,10 +162,10 @@ main{
 	width:170px;
 	font-family: font_ns, sans-serif; 
 	font-size: 18px;
-	background-color: #009223;
+	background-color: rgb(255 101 11);
 	border-radius: 25px 25px 25px 25px;
 	height:50px;
-	border: 2px solid #009223;
+	border: 2px solid rgb(255 101 11);
 }
 .signupWrap>.inputArea>.inputForm form ul>li>div>.passwordCheck {
 	display:none;

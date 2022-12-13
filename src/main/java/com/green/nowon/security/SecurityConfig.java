@@ -10,6 +10,14 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 	
+	
+	//DB의 인증정보를 이용해서 인증처리하는 service
+	@Bean
+	MyUserDetailsService myUserDetailsService() {
+		return new MyUserDetailsService();
+	}
+	
+	
 	@Bean
     PasswordEncoder passwordEncoder() {
        return new BCryptPasswordEncoder();
@@ -20,7 +28,7 @@ public class SecurityConfig {
  		http
  			.authorizeRequests(authorize -> authorize
  						.antMatchers("/css/**","/images/**").permitAll()
- 						.antMatchers("/","/members/signup","/members/signin","/members/join").permitAll()
+ 						.antMatchers("/","/members/signup","/members/join").permitAll()
  						.antMatchers("/admin/**").permitAll()
  						.anyRequest().authenticated()
  					)

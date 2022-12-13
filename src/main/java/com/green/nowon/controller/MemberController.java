@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 public class MemberController {
 	
 	@Autowired
-	private MemberService mService = new MemberServiceProcess();
+	private MemberService mService;
 	
 	@GetMapping("/members/signin")
 	public String signin() {return "views/sign/signin";}

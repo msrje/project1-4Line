@@ -10,25 +10,28 @@ body { overflow-x:hidden; }
 	width: 100%;
 	position: absolute;
 	text-align: center;
-	z-index: 5;
+	z-index: 1;
 }
 .wrap>.main-wrap>.mainbanner li .main-img2{
 	width: 100%;
 	left:100%;
 	position: absolute;
 	text-align: center;
+	z-index: 2;
 }
 .wrap>.main-wrap>.mainbanner li .main-img3{
 	width: 100%;
 	left:200%;
 	position: absolute;
 	text-align: center;
+	z-index: 3;
 }
 .wrap>.main-wrap>.mainbanner li .main-img4{
 	width: 100%;
 	left:300%;
 	position: absolute;
 	text-align: center;
+	z-index: 4;
 }
 
 .wrap>.main-wrap>div{
@@ -216,7 +219,15 @@ body { overflow-x:hidden; }
 	width: 260px;
 	height: 182px;
 }
+.wrap>.menu-wrap>.sand>.goods>ul>li>a{
+	text-align: center;
+}
+.wrap>.menu-wrap>.sand>.goods>ul>li>a>strong{
+	text-align: center;
+    width: 100%;
+    display: block;
 
+}
 .wrap>.event-wrap{
 	background-color: #ddd;
 }

@@ -24,10 +24,16 @@ public class MemberController {
 	@GetMapping("/members/signup")
 	public String signup() {return "views/sign/signup";}
 	
+	
+	/**
+	 * 회원가입 
+	 * @param dto 데이터 삽입 dto
+	 * @return 회원가입시 로그인창으로 이동
+	 */
 	@PostMapping("/members/join")
 	public String join(MemberInsertDTO dto) {
 		mService.save(dto);
-		return "/members/signin";
+		return "redirect:/members/signin";
 	}
 	
 }

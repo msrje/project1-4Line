@@ -20,17 +20,21 @@ public class SecurityConfig {
  		http
  			.authorizeRequests(authorize -> authorize
  						.antMatchers("/css/**","/images/**").permitAll()
- 						.antMatchers("/","/members/signup","/members/signin").permitAll()
- 						.antMatchers("/admin/**").hasAnyRole("ADMIN")
+ 						.antMatchers("/","/members/signup","/members/signin","/members/join").permitAll()
+ 						.antMatchers("/admin/**").permitAll()
  						.anyRequest().authenticated()
  					)
  					.formLogin(formLogin->formLogin
- 							.loginPage("/member/login")
- 							.loginProcessingUrl("/member/login")
+ 							.loginPage("/members/signin")//로그인 페이지
+ 							.loginProcessingUrl("/members/signin")//form안의 action 경로
  							.usernameParameter("email")
  							.passwordParameter("pass")
+ 							.defaultSuccessUrl("/")//성공시 이동 url
+ 							.failureUrl("/members/signin")//실패시 이동 url
  							.permitAll()
- 							).csrf(csrf->csrf.disable())
+ 							)
+ 					.csrf(csrf->csrf.disable())
+ 					
  					;
  		return http.build();
  	}

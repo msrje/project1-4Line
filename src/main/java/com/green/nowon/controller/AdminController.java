@@ -11,13 +11,4 @@ public class AdminController {
 		return "admin/default";
 	}
 	
-	@GetMapping("/admin/items")
-	public String list() {
-		return "/admin/상품리스트페이지"; //일단 헷갈릴까봐 한글로 했습니다 !
-	}
-	
-	@GetMapping("/admin/items/reg")
-	public String itemsReg() {
-		return "/admin/등록페이지";
-	}
 }

@@ -13,7 +13,5 @@ public class GoodsDetailDTO {
 	private int price;
 	private int stock;
 	private String content;
-	private LocalDateTime updatedDate;
-	private LocalDateTime createdDate;
 
 }

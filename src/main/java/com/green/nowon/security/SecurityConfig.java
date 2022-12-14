@@ -28,8 +28,8 @@ public class SecurityConfig {
  		http
  			.authorizeRequests(authorize -> authorize
  						.antMatchers("/css/**","/images/**").permitAll()
- 						.antMatchers("/","/members/signup","/members/join").permitAll()
- 						.antMatchers("/admin/**").hasAnyRole("ROLE_ADMIN")
+ 						.antMatchers("/","/members/**").permitAll()
+ 						.antMatchers("/admin/**").hasRole("ADMIN")
  						.anyRequest().authenticated()
  					)
  					.formLogin(formLogin->formLogin

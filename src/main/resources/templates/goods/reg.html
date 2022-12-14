@@ -17,7 +17,9 @@
     });
     
     function gimgChanged(el) {
+    	
     	var fileData=$(el)[0].files[0];
+    	
     	console.log(fileData);
     	
     	var formData = new FormData()
@@ -29,11 +31,11 @@
     		contentType: false,
     		processData: false,
     		data:formData,
-    		success:function(url){ /* 서버에 업로드이후 url을 리턴 -> 파라미터에 전달 */
+    		success:function(map){ /* 서버에 업로드이후 url을 리턴 -> 파라미터에 전달 */
     			console.log(map);
     		
-    			$(el).siblings(".img").css("background-image", "url("+result+")");
-    			$(el).siblings(".newName").val();
+    			$(el).siblings(".img").css("background-image", "url("+map.url+")");
+    			$(el).siblings(".newName").val(map.fileName);
     			//대표 이미지와 추가 이미지 구분
     			if($(el).prop("id") == "defimg")return;//대표이미지인 경우 여기서 함수종료
     			
@@ -96,7 +98,7 @@
 	    			</tr>
 	    			<tr class="dep1">
 	    				<td>수량</td>
-	    				<td><input type="text" name="stock" placeholder="판매수량을 입력하세요"></td>
+	    				<td><input type="number" name="stock" placeholder="판매수량을 입력하세요"></td>
 	    			</tr>
 	    			<tr >
 	    				<td colspan="2">↓상세정보↓</td>
@@ -106,7 +108,7 @@
 	    			</tr>
 	    			<tr class="dep2">
 	    				<td colspan="2">
-	    					<button>상품등록</button>
+	    					<button>등록</button>
 	    				</td>
 	    			</tr>
 	    		</table>

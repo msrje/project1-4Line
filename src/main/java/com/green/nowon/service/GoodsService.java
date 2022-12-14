@@ -7,6 +7,8 @@ import com.green.nowon.domain.dto.goods.GoodsInsertDTO;
 public interface GoodsService {
 
 	void save(GoodsInsertDTO dto);
+	
+	void findAll(Model model);
 
 	void categoryList(Model model);
 

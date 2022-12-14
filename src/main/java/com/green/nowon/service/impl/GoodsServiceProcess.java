@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 
 import com.green.nowon.domain.dto.GoodsListDTO;
 import com.green.nowon.domain.dto.goods.GoodsInsertDTO;
+import com.green.nowon.domain.entity.CategoryRepository;
 import com.green.nowon.domain.entity.GoodsEntityRepository;
 import com.green.nowon.service.GoodsService;
 
@@ -18,11 +19,14 @@ public class GoodsServiceProcess implements GoodsService{
 	@Autowired
 	GoodsEntityRepository gRepository;
 	
+	@Autowired
+	CategoryRepository categoryRepository;
 	
 	@Override
 	public void save(GoodsInsertDTO dto) {
 		gRepository.save(dto.entity());
 	}
+
 	
 	@Override
 	public void findAll(Model model) {
@@ -31,4 +35,24 @@ public class GoodsServiceProcess implements GoodsService{
 		
 		model.addAttribute("list", result);
 	}
+
+
+
+	@Override
+	public void categoryList(Model model) {
+		model.addAttribute("list", 
+				categoryRepository.findAllByParentCnoIsNull());
+		
+	}
+
+	@Override
+	public void categoryList(long cno, Model model) {
+		model.addAttribute("list", 
+				categoryRepository.findAllByParentCno(cno));		
+		
+	}
+
+
+	
+
 }

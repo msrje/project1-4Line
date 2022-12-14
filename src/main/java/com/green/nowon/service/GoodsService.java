@@ -10,4 +10,8 @@ public interface GoodsService {
 	
 	void findAll(Model model);
 
+	void categoryList(Model model);
+
+	void categoryList(long cno, Model model);
+
 }

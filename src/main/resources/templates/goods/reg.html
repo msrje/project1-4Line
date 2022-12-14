@@ -14,7 +14,38 @@
     <script>
     $(document).ready(function() {
         $('#summernote').summernote();
+        
+        //1차 카테고리 셋팅
+        getCategory();
     });
+    
+    function cateSelected(el){
+    
+  	var depth=$(el).index();	
+    	if(depth==1)return; 
+    	
+  	var cateNo=$(el).val();
+    	
+    	$.ajax({
+    		url: `/common/categorys/${cateNo}`,
+		  	success: function(result){ 
+			  $(`.cate>.category:gt(${depth})`).remove(); //카테고리 변경 시 뒤에 계속 카테고리 창 띄우지 않게 하는 거
+		      $(".cate>.category").last().after(result); 		
+		      $(".cate>.category").last().find(".depth").text(depth+2+"차 카테고리");
+		  	},
+    	});
+    }
+    
+    function getCategory(){
+  	  
+  	  $.ajax({
+  		  url: "/common/categorys",
+  		  success: function(result){ 
+  			  $(".cate").html(result); 
+  			  $(".cate>.category").last().find(".depth").text("1차 카테고리");
+  		  },
+  	  });
+    }
     
     function gimgChanged(el) {
     	var fileData=$(el)[0].files[0];
@@ -66,6 +97,14 @@
     		<p class="pagetitle">[상품등록 페이지]</p>
     		<form class="form" action="/admin/goods/reg" method="get">
 	    		<table class="all">
+	    			<tr>
+	    				<td>카테고리</td>
+	    				<td>
+	    					<div class="cate">
+	    					
+	    					</div>
+	    				</td>
+	    			</tr>
 	    			<tr class="dep1">
 	    				<td>상품명</td>
 	    				<td><input type="text" name="title" placeholder="상품명을 입력하세요"></td>

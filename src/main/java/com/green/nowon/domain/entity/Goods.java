@@ -1,10 +1,17 @@
 package com.green.nowon.domain.entity;
 
+import java.util.List;
+import java.util.Vector;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -14,6 +21,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 
 @Getter
@@ -36,6 +44,35 @@ public class Goods extends BaseDateEntity{
 	private String content;
 	private int price;
 	private int stock;
-
+	
+	//양방향설정
+	@JoinColumn(name = "gno")
+	@Builder.Default
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	List<GoodsImg> imgs=new Vector<>();
+	
+	public String defImgUrl() {
+		GoodsImg def=imgs.get(0);
+		return def.getUrl()+def.getNewName();
+	}
+	
+	//이미지 삽입 편의메서드
+	public Goods addImg(GoodsImg gimg) {
+		imgs.add(gimg);
+		return this;
+	}
+	
+	//대표이미지만 추출하는 편의메서드
+	public GoodsImg defImg() {
+		for(GoodsImg gimg:imgs) {
+			if(gimg.isDef()==true)
+				return gimg;
+		}
+		return null;
+	}
+	
+	
+	
+	
 
 }

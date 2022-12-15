@@ -23,5 +23,9 @@ public class GoodsController {
 		return "redirect:/admin";
 	}
 	
+	@GetMapping("/comm/goods/list")
+	public String userGoodsList() {
+		return "goods/user-list";
+	}
 	
 }

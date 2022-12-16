@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import com.green.nowon.domain.dto.GoodsDetailDTO;
 import com.green.nowon.domain.dto.GoodsListDTO;
 import com.green.nowon.domain.dto.goods.GoodsInsertDTO;
 import com.green.nowon.domain.entity.CategoryRepository;
@@ -49,6 +50,17 @@ public class GoodsServiceProcess implements GoodsService{
 	public void categoryList(long cno, Model model) {
 		model.addAttribute("list", 
 				categoryRepository.findAllByParentCno(cno));		
+		
+	}
+
+
+	@Override
+	public void adminDetail(long gno, Model model) {
+		
+		GoodsDetailDTO result=gRepository.findById(gno)
+				.map(GoodsDetailDTO::new)
+				.orElseThrow();
+		model.addAttribute("detail", result);
 		
 	}
 

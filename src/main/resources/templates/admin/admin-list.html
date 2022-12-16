@@ -5,16 +5,6 @@
     <!-- 해당하는 페이지의 css나 js를 아래에 적용 -->
     <link rel="stylesheet" href="/css/commons/common.css">
     <link rel="stylesheet" href="/css/goods/admin-list.css">
-     <style type="text/css">
-    	.list-img{
-    		display: inline-block;
-    		width: 150px;
-    		height: 150px;
-    		background-repeat: no-repeat;
-    		background-position: center;
-    		background-size: contain;
-    	}
-    </style>
 </head>
 <body class="flex">
     <th:block th:insert="~{layout/admin-layout :: header}"/>
@@ -27,7 +17,6 @@
 			    	<tr>
 			    		<td>구분</td>
 			    		<td>상품번호</td>
-			    		<td>list이미지</td>
 			    		<td>상품명</td>
 			    		<td>상품가격</td>
 			    		<td>주문가능수량</td>
@@ -36,7 +25,6 @@
 			    	<tr th:each="dto:${list}" th:onclick="|goodsClicked(${dto.gno})|">
 			    		<td><a th:href="|/admin/goods/${dto.gno}|"><button type="button">수정</button></a> </td>
 			    		<td>[[${dto.gno}]]</td>
-			    		<td class="list-img"></td>
 			    		<td>[[${dto.title}]]</td>
 			    		<td>[[${dto.price}]]</td>
 			    		<td>[[${dto.stock}]]</td>

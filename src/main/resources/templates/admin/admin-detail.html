@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:insert="~{layout/admin-layout :: head}"/>
+    <!-- 해당하는 페이지의 css나 js를 아래에 적용 -->
+    <link rel="stylesheet" href="/css/commons/common.css">
+    <link rel="stylesheet" href="/css/goods/admin-detail.css">
+</head>
+<body class="flex">
+	<th:block th:insert="~{layout/admin-layout :: header}"/>
+	<main>
+		<div class="wrap">
+			<a href="/">HOME</a>
+			<a href="/admin/goods/list">상품등록</a>
+		    <p>상세 페이지</p>
+		    <section class="view-size" th:if="${detail}">
+			    <ul>
+			    	<li>
+			    		<label>상품번호</label>
+			    		<span>[[${detail.gno}]]</span>
+			    	</li>
+			    	<li>
+			    		<label>등록일</label>
+			    		<span>[[${detail.createdDate}]]</span>
+			    	</li>
+			    	<li>
+			    		<label>상품명</label>
+			    		<input type="text" th:value="${detail.title}">
+			    	</li>
+			    	<li>
+			    		<label>상품이미지</label>
+			    	
+			    		<ol>
+			    			<li class="img">
+			    				<div class="flex" >
+			    					<input type="hidden" class="img-url" >
+			    					<div class="img-edit img-ctl">수정</div>
+			    					<div class="img-del img-ctl">삭제</div>
+			    				</div>
+			    			</li>
+			    		</ol>
+			    		
+			    	</li>
+			    	<li>
+			    		<label>판매가격</label>
+			    		<input type="text" th:value="${detail.price}">
+			    	</li>
+			    	<li>
+			    		<label>재고</label>
+			    		<input type="text" th:value="${detail.stock}">
+			    	</li>
+			    	<li>
+			    		<label>내용</label>
+			    		<textarea id="summernote">[[${detail.content}]]</textarea>
+			    	</li>
+			    </ul>
+		    </section>
+	    </div>
+    </main>
+</body>
+</html>

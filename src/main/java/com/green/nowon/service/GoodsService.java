@@ -14,4 +14,6 @@ public interface GoodsService {
 
 	void categoryList(long cno, Model model);
 
+	void adminDetail(long gno, Model model);
+
 }

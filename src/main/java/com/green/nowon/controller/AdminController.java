@@ -24,7 +24,7 @@ public class AdminController {
 	
 	@Autowired
 	private AdminService aService;
-
+	@Autowired
 	private GoodsService service;
 
 	
@@ -45,7 +45,7 @@ public class AdminController {
 	public String update(@PathVariable long gno ,AdminUpdateDTO dto) {
 		aService.update(gno, dto);
 		return "redirect:/admin/goods/list";
-
+	}
 	@GetMapping("/admin/goods/{gno}")
 	public String adminDetail(@PathVariable long gno, Model model) {
 		service.adminDetail(gno, model);

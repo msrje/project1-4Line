@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.green.nowon.domain.dto.goods.GoodsInsertDTO;
 import com.green.nowon.service.GoodsService;
+
 @Controller
 public class GoodsController {
 	
@@ -25,6 +26,12 @@ public class GoodsController {
 		return "redirect:/admin";
 	}
 	
+
+	@GetMapping("/comm/goods/list")
+	public String userGoodsList() {
+		return "goods/user-list";
+	}
+
 	//1차 카테고리 불러오기
 	@GetMapping("/common/categorys")
 	public String categoryList(Model model) {
@@ -40,5 +47,6 @@ public class GoodsController {
 	}
 	
 	
+
 	
 }

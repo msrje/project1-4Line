@@ -20,15 +20,12 @@ td:nth-child(3){
 	width: 180px;
 }
 td:nth-child(4){
-	width: 180px;
-}
-td:nth-child(5){
 	width: 150px;
 }
-td:nth-child(6){
+td:nth-child(5){
 	width: 100px;
 }
-td:nth-child(7){
+td:nth-child(6){
 	width: 200px;
 }
 tr:nth-child(even){

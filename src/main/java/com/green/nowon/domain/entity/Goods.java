@@ -17,6 +17,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
 
+import com.green.nowon.domain.dto.admin.AdminUpdateDTO;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -75,4 +77,12 @@ public class Goods extends BaseDateEntity{
 	
 	
 
+
+	public Goods update(AdminUpdateDTO dto) {
+		this.title=dto.getTitle();
+		this.content=dto.getContent();
+		this.price = dto.getPrice();
+		this.stock = dto.getStock();
+		return this;
+	}
 }

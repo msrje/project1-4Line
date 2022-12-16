@@ -28,7 +28,7 @@ public class SecurityConfig {
  		http
  			.authorizeRequests(authorize -> authorize
  						.antMatchers("/css/**","/images/**").permitAll()
- 						.antMatchers("/","/members/**").permitAll()
+ 						.antMatchers("/","/members/**","/comm/**").permitAll()
  						.antMatchers("/admin/**").hasRole("ADMIN")
  						.anyRequest().authenticated()
  					)

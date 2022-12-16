@@ -39,9 +39,12 @@
     border: none;
     font-size: 20px;
 }
-
+.wrap>.goodslist{
+	width: 100%;
+}
 .wrap>.goodslist ul li{
 	margin: 80px 0;
+	position: relative;
 }
 .wrap>.goodslist ul li:last-child{
 	margin-bottom: 120px;

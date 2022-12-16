@@ -10,6 +10,9 @@ import com.green.nowon.domain.dto.admin.AdminUpdateDTO;
 import com.green.nowon.service.AdminService;
 import com.green.nowon.service.impl.AdminServiceProcess;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Controller
 public class AdminController {
 	
@@ -27,7 +30,7 @@ public class AdminController {
 	}
 	
 	
-	@PatchMapping("")
+	@PatchMapping("/admin/goods/{gno}")
 	public String update(@PathVariable long gno ,AdminUpdateDTO dto) {
 		aService.update(gno, dto);
 		return "redirect:/admin/goods/list";

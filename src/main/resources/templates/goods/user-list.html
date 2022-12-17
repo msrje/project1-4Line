@@ -6,6 +6,9 @@
 <head>
     <link rel="stylesheet" href="/css/goods/user-list.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+	</script>
 </head>
 <main>
 	<div class="wrap">
@@ -31,121 +34,21 @@
 				<!-- db에서 받은 만큼 복사하기 -->
 				<li class="flex">
 					<!-- 이미지 -->
-					<div class="box">
+					<div class="box" th:each="dto:${list}">
 						<div class="goodsImg">
-							<a href=""></a>
+							<a></a>
 						</div>
 						<!-- 가격 평점 -->
 						<div class="goodsName">
 							<div>
-								<p>나는야 샌드위치</p>
+								<p>[[${dto.title}]]</p>
 							</div>
 							<div class="goodsPrice">
-								<p><strong>20%</strong>2000원</p>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<div class="goodsImg">
-							<a href=""></a>
-						</div>
-						<!-- 가격 평점 -->
-						<div class="goodsName">
-							<div>
-								<p>나는야 샌드위치</p>
-							</div>
-							<div class="goodsPrice">
-								<p><strong>20%</strong>2000원</p>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<div class="goodsImg">
-							<a href=""></a>
-						</div>
-						<!-- 가격 평점 -->
-						<div class="goodsName">
-							<div>
-								<p>나는야 샌드위치</p>
-							</div>
-							<div class="goodsPrice">
-								<p><strong>20%</strong>2000원</p>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<div class="goodsImg">
-							<a href=""></a>
-						</div>
-						<!-- 가격 평점 -->
-						<div class="goodsName">
-							<div>
-								<p>나는야 샌드위치</p>
-							</div>
-							<div class="goodsPrice">
-								<p><strong>20%</strong>2000원</p>
-							</div>
-						</div>
-					</div>
-					<!-- 이미지 -->
-					<div class="box">
-						<div class="goodsImg">
-							<a href=""></a>
-						</div>
-						<!-- 가격 평점 -->
-						<div class="goodsName">
-							<div>
-								<p>나는야 샌드위치</p>
-							</div>
-							<div class="goodsPrice">
-								<p><strong>20%</strong>2000원</p>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<div class="goodsImg">
-							<a href=""></a>
-						</div>
-						<!-- 가격 평점 -->
-						<div class="goodsName">
-							<div>
-								<p>나는야 샌드위치</p>
-							</div>
-							<div class="goodsPrice">
-								<p><strong>20%</strong>2000원</p>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<div class="goodsImg">
-							<a href=""></a>
-						</div>
-						<!-- 가격 평점 -->
-						<div class="goodsName">
-							<div>
-								<p>나는야 샌드위치</p>
-							</div>
-							<div class="goodsPrice">
-								<p><strong>20%</strong>2000원</p>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<div class="goodsImg">
-							<a href=""></a>
-						</div>
-						<!-- 가격 평점 -->
-						<div class="goodsName">
-							<div>
-								<p>나는야 샌드위치</p>
-							</div>
-							<div class="goodsPrice">
-								<p><strong>20%</strong>2000원</p>
+								<p><strong>20%</strong>[[${dto.price}]]</p>
 							</div>
 						</div>
 					</div>
 				</li>
-				
 			</ul>
 		</div>
 	</div>

@@ -43,14 +43,16 @@
 	width: 100%;
 }
 .wrap>.goodslist ul li{
-	margin: 80px 0;
-	position: relative;
+	margin: 80px;
+    position: relative;
+    width: 90%;
+    flex-wrap: wrap;
 }
 .wrap>.goodslist ul li:last-child{
 	margin-bottom: 120px;
 }
 .wrap>.goodslist ul li>.box{
-	margin:auto;
+	margin:0 5%;
 }
 .wrap>.goodslist ul li>.box>.goodsImg{
 	background-image: url("/images/goods/sandwich_cl01_01.jpg");

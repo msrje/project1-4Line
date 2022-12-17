@@ -56,7 +56,6 @@ public class GoodsServiceProcess implements GoodsService{
 
 	@Override
 	public void adminDetail(long gno, Model model) {
-		
 		GoodsDetailDTO result=gRepository.findById(gno)
 				.map(GoodsDetailDTO::new)
 				.orElseThrow();

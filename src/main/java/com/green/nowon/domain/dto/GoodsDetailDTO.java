@@ -2,7 +2,7 @@ package com.green.nowon.domain.dto;
 
 import java.time.LocalDateTime;
 
-import com.green.nowon.domain.entity.Goods;
+import com.green.nowon.domain.entity.GoodsEntity;
 
 
 import lombok.Getter;
@@ -19,7 +19,7 @@ public class GoodsDetailDTO {
 	private LocalDateTime updatedDate;
 	private LocalDateTime createdDate;
 	
-	public GoodsDetailDTO(Goods e) {
+	public GoodsDetailDTO(GoodsEntity e) {
 		this.gno =e.getGno();
 		this.title = e.getTitle();
 		this.content = e.getContent();

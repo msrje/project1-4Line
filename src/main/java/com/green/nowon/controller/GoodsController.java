@@ -28,7 +28,8 @@ public class GoodsController {
 	
 
 	@GetMapping("/comm/goods/list")
-	public String userGoodsList() {
+	public String userGoodsList(Model model) {
+		gService.findAll(model);
 		return "goods/user-list";
 	}
 

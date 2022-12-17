@@ -22,6 +22,6 @@ public class CartGoodsEntity {
 	
 	@JoinColumn//fk:goods_no
 	@ManyToOne
-	private Goods item;
+	private GoodsEntity item;
 	
 }

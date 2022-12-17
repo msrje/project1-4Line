@@ -1,6 +1,6 @@
 package com.green.nowon.domain.dto.goods;
 
-import com.green.nowon.domain.entity.Goods;
+import com.green.nowon.domain.entity.GoodsEntity;
 
 import lombok.Setter;
 
@@ -13,8 +13,8 @@ public class GoodsInsertDTO {
 	private int price;
 	private int stock;
 	
-	public Goods entity() {
-		return Goods.builder()
+	public GoodsEntity entity() {
+		return GoodsEntity.builder()
 				.gno(gno)
 				.title(title)
 				.content(content)

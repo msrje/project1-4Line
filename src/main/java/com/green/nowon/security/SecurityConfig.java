@@ -1,13 +1,17 @@
 package com.green.nowon.security;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 
 @EnableWebSecurity
+@Configuration
 public class SecurityConfig {
 	
 	
@@ -17,10 +21,15 @@ public class SecurityConfig {
 		return new MyUserDetailsService();
 	}
 	
-	
 	@Bean
     PasswordEncoder passwordEncoder() {
        return new BCryptPasswordEncoder();
+    }
+	
+	@Bean
+    public HiddenHttpMethodFilter httpMethodFilter() {
+        HiddenHttpMethodFilter hiddenHttpMethodFilter = new HiddenHttpMethodFilter();
+        return hiddenHttpMethodFilter;
     }
 	
 	@Bean
@@ -30,6 +39,7 @@ public class SecurityConfig {
  						.antMatchers("/css/**","/images/**").permitAll()
  						.antMatchers("/","/members/**","/comm/**").permitAll()
  						.antMatchers("/admin/**").hasRole("ADMIN")
+ 						.antMatchers(HttpMethod.PATCH,"/admin/**").hasRole("ADMIN")
  						.anyRequest().authenticated()
  					)
  					.formLogin(formLogin->formLogin

@@ -23,7 +23,7 @@ public class GoodsController {
 	@GetMapping("/admin/goods/reg")
 	public String goodsInsert(GoodsInsertDTO dto) {
 		gService.save(dto);
-		return "redirect:/admin";
+		return "redirect:/admin/goods/list";
 	}
 	
 

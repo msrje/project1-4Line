@@ -3,6 +3,7 @@ package com.green.nowon.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -41,9 +42,16 @@ public class AdminController {
 	}
 	
 	@PatchMapping("/admin/goods/{gno}")
-	public String update(@PathVariable long gno ,AdminUpdateDTO dto) {
-		System.out.println("update patch 작동");
+	public String update(@PathVariable long gno, AdminUpdateDTO dto) {
+		//System.out.println("update patch 작동");
 		aService.update(gno, dto);
+		return "redirect:/admin/goods/list";
+	}
+	
+	@DeleteMapping("/admin/goods/{gno}")
+	public String delete(@PathVariable long gno) {
+		System.out.println("delete 작동");
+		aService.delete(gno);
 		return "redirect:/admin/goods/list";
 	}
 	

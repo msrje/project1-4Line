@@ -47,7 +47,11 @@ public class GoodsController {
 		return "goods/category";
 	}
 	
-	
+	//장바구니
+	@GetMapping("/cart")
+	public String cart() {
+		return "goods/cart";
+	}
 
 	
 }

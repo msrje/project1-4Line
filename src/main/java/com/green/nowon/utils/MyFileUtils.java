@@ -9,7 +9,22 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.multipart.MultipartFile;
 
 public class MyFileUtils {
-
+	
+	public static void moveUploadLocationFromTemp(String[] newName, String url){
+		ClassPathResource cpr=new ClassPathResource("static"+url+"temp/");
+												//"/images/goods/upload/"
+		for(String name:newName) {
+			try {
+				//temp경로의 파일
+				File file=new File(cpr.getFile(), name);
+				file.renameTo(new File(cpr.getFile().getParent(), name));
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+		}
+	}
+	
 	public static Map<String, String> fileUpload(MultipartFile gimg, String location) {
 		
 		ClassPathResource cpr=new ClassPathResource("static"+location);

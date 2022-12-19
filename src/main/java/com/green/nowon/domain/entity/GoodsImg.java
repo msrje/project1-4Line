@@ -45,14 +45,15 @@ public class GoodsImg extends BaseDateEntity{
 	
 	private boolean def;
 
+	
 	//대표이미지를 세팅해주는 편의메서드
 	public GoodsImg def(boolean def) {
 		this.def=def;
 		return this;
 	}
-
 	
-
-	
+	@JoinColumn//gno
+	@ManyToOne
+	private GoodsEntity goods;
 
 }

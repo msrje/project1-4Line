@@ -5,5 +5,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface GoodsEntityRepository extends JpaRepository<GoodsEntity, Long>{
+
+	void deleteById(long gno);
 	
 }

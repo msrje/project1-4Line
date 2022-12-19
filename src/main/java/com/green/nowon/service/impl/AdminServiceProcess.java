@@ -2,13 +2,9 @@ package com.green.nowon.service.impl;
 
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
-import com.green.nowon.domain.dto.GoodsDetailDTO;
 import com.green.nowon.domain.dto.admin.AdminUpdateDTO;
 import com.green.nowon.domain.entity.GoodsEntity;
 import com.green.nowon.domain.entity.GoodsEntityRepository;
@@ -36,6 +32,12 @@ public class AdminServiceProcess implements AdminService {
 			entity.update(dto);
 			repo.save(entity);
 		}
+	}
+	//삭제
+	@Override
+	public void delete(long gno) {
+		repo.deleteById(gno);
+		
 	}
 
 }

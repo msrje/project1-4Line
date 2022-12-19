@@ -50,7 +50,7 @@ public class AdminController {
 	
 	@DeleteMapping("/admin/goods/{gno}")
 	public String delete(@PathVariable long gno) {
-		System.out.println("delete 작동");
+		
 		aService.delete(gno);
 		return "redirect:/admin/goods/list";
 	}

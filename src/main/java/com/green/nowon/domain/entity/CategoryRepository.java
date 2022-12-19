@@ -15,6 +15,8 @@ public interface CategoryRepository extends JpaRepository<CategoryEntity, Long>{
 	List<CategoryEntity> findAllByParentCnoIsNull();
 	
 	//서브 카테고리
-	List<CategoryEntity> findAllByParentCno(long parentNo); 
+	List<CategoryEntity> findAllByParentCno(long parentNo);
+
+	
 
 }

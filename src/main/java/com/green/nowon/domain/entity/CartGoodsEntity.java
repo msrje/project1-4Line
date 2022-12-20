@@ -7,21 +7,35 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
 @Entity
 public class CartGoodsEntity {
-	//같은 상품을 여러개 주문할수 있으므로 개수표현을 위한 entity
+	//같은상품을 여러개 주문할 수 있으므로 개수표현을 위한 entity
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long no;
 	
-	private int count;
+	private int quantity;//구매수량
 	
 	@JoinColumn//fk:cart_no
 	@ManyToOne
 	private CartEntity cart;
 	
-	@JoinColumn//fk:goods_no
+	@JoinColumn//fk:goods_gno
 	@ManyToOne
-	private GoodsEntity item;
+	private GoodsEntity goods;
+	
+	public CartGoodsEntity updateQuantity(int quantity) {
+		this.quantity += quantity;
+		return this;
+	}
 	
 }

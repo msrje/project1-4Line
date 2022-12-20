@@ -15,9 +15,12 @@ public class GoodsimgServiceProcess implements GoodsImgService {
 	@Value("${file.location.temp}")
 	private String locationTemp;
 	
+	@Value("${file.location.Upload}")
+	private String locationUpload;
+	
+	
 	@Override
 	public Map<String, String> fileTempUpload(MultipartFile gimg) {
-
 		return MyFileUtils.fileUpload(gimg, locationTemp);
 	}
 

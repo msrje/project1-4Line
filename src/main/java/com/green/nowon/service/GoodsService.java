@@ -16,4 +16,6 @@ public interface GoodsService {
 
 	void adminDetail(long gno, Model model);
 
+	void Detail(long gno, Model model);
+
 }

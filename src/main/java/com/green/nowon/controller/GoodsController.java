@@ -32,6 +32,13 @@ public class GoodsController {
 		gService.findAll(model);
 		return "goods/user-list";
 	}
+	
+	@GetMapping("/comm/goods/{gno}")
+	public String userGoodsDetail(@PathVariable long gno,Model model) {
+		gService.adminDetail(gno, model);
+		return "goods/user-detail";
+	}
+	
 
 	//1차 카테고리 불러오기
 	@GetMapping("/common/categorys")

@@ -78,6 +78,15 @@ public class GoodsServiceProcess implements GoodsService{
 	}
 
 
+	@Override
+	public void Detail(long gno, Model model) {
+		GoodsDetailDTO result=gRepository.findById(gno)
+				.map(GoodsDetailDTO::new)
+				.orElseThrow();
+		model.addAttribute("dto", result);
+	}
+
+
 	
 
 }

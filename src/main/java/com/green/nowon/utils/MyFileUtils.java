@@ -21,18 +21,17 @@ public class MyFileUtils {
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
-			
 		}
 	}
 	
 	public static Map<String, String> fileUpload(MultipartFile gimg, String location) {
-		
 		ClassPathResource cpr=new ClassPathResource("static"+location);
 		File folder=null;
 		String fileName=null;
+		String orgName=null;
 		try {
 			folder=cpr.getFile();
-			String orgName=gimg.getOriginalFilename();
+			orgName=gimg.getOriginalFilename();
 			
 			int idx=orgName.lastIndexOf(".");//파일이름중에서 마직막(.)의 인덱스번호
 			fileName=orgName.substring(0, idx)
@@ -51,6 +50,7 @@ public class MyFileUtils {
 		Map<String , String> tempfile=new HashMap<>();
 		//tempfile.put("location", location);
 		tempfile.put("fileName", fileName);
+		tempfile.put("orgName", orgName);
 		tempfile.put("url", location+fileName);
 		return tempfile;
 	}

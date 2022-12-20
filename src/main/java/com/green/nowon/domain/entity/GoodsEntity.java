@@ -49,9 +49,8 @@ public class GoodsEntity extends BaseDateEntity{
 	private int stock;
 	
 	//양방향설정
-	@JoinColumn(name = "gno")
 	@Builder.Default
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "goods")
 	List<GoodsImg> imgs=new ArrayList<>();
 	
 	public String defImgUrl() {
@@ -71,7 +70,7 @@ public class GoodsEntity extends BaseDateEntity{
 			if(gimg.isDef()==true)
 				return gimg;
 		}
-		return null;
+		return imgs.get(0);
 	}
 
 	//goods update

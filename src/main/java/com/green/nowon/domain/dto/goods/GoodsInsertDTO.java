@@ -14,7 +14,6 @@ public class GoodsInsertDTO {
 	
 	private long[]  categoryNo;
 	
-	private long gno;
 	private String title;
 	private String content;
 	private int price;
@@ -23,7 +22,9 @@ public class GoodsInsertDTO {
 	private String[] newName;
 	private String[] orgName;
 	
-	public List<GoodsImg> toItemListImgs(GoodsEntity goods,String url) {
+	private long size;
+	
+	public List<GoodsImg> toGoodsImgs(GoodsEntity goods,String url) {
 		List<GoodsImg> imgs=new ArrayList<>();
 		for(int i=0; i<orgName.length; i++) {
 			if(orgName[i].equals("") || orgName[i]==null)continue;
@@ -35,6 +36,7 @@ public class GoodsInsertDTO {
 					.newName(newName[i])
 					.def(def)
 					.goods(goods)//fk설정을 위한
+					.size(size)
 					.build();
 			imgs.add(ent);
 		}
@@ -49,7 +51,6 @@ public class GoodsInsertDTO {
 	
 	public GoodsEntity entity() {
 		return GoodsEntity.builder()
-				.gno(gno)
 				.title(title)
 				.content(content)
 				.price(price)

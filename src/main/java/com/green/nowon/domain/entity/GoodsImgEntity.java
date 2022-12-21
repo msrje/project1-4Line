@@ -55,3 +55,4 @@ public class GoodsImgEntity extends BaseDateEntity{
 	
 
 }
+

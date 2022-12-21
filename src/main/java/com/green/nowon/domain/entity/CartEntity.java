@@ -9,15 +9,23 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
 @Entity
 public class CartEntity {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long cno;
+	private long no;
 	
-	@JoinColumn(name="member_no")
+	@JoinColumn(name = "member_no")
 	@OneToOne
-	MemberEntity member;
-	
+	private MemberEntity member;
 }

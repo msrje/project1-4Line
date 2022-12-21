@@ -14,8 +14,6 @@ public interface GoodsImgEntityRepository extends JpaRepository<GoodsImgEntity, 
 
 
 
-
-
 	
 
 }

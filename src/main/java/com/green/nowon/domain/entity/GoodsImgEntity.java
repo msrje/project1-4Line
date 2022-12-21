@@ -1,5 +1,6 @@
 package com.green.nowon.domain.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +17,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 //@ToString(exclude = "goods")
 @Getter
@@ -38,12 +40,9 @@ public class GoodsImgEntity extends BaseDateEntity{
 	private String orgName;
 	@Column(nullable = false)
 	private String newName;
-	@Column(nullable = false)
-	private long size;
 	
 	private boolean def;
 
-	
 	//대표이미지를 세팅해주는 편의메서드
 	public GoodsImgEntity def(boolean def) {
 		this.def=def;
@@ -53,5 +52,6 @@ public class GoodsImgEntity extends BaseDateEntity{
 	@JoinColumn//gno
 	@ManyToOne
 	private GoodsEntity goods;
+	
 
 }

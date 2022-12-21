@@ -14,8 +14,81 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $('#summernote').summernote();
+        //1차 카테고리 셋팅
+        getCategory();
     });
-    </script>
+    
+    function cateSelected(el){
+    
+  	var depth=$(el).index();	
+    	if(depth==1)return; 
+    	
+  	var cateNo=$(el).val();
+    	
+    	$.ajax({
+    		url: `/common/categorys/${cateNo}`,
+		  	success: function(result){ 
+			  $(`.cate>.category:gt(${depth})`).remove(); //카테고리 변경 시 뒤에 계속 카테고리 창 띄우지 않게 하는 거
+		      $(".cate>.category").last().after(result); 		
+		      $(".cate>.category").last().find(".depth").text(depth+2+"차 카테고리");
+		  	},
+    	});
+    }
+    
+    function getCategory(){
+  	  
+  	  $.ajax({
+  		  url: "/common/categorys",
+  		  success: function(result){ 
+  			  $(".cate").html(result); 
+  			  $(".cate>.category").last().find(".depth").text("1차 카테고리");
+  		  },
+  	  });
+    }
+    
+    function gimgChanged(el) {
+    	
+    	var fileData=$(el)[0].files[0];
+    	
+    	console.log(fileData);
+    	
+    	var formData = new FormData()
+		formData.append('gimg', fileData);
+    	
+    	$.ajax({
+    		url: "/admin/temp-upload",
+    		type: "post",
+    		contentType: false,
+    		processData: false,
+    		data:formData,
+    		success:function(map){ /* 서버에 업로드이후 url을 리턴 -> 파라미터에 전달 */
+    			console.log(map);
+    		
+    			$(el).siblings(".img").css("background-image", "url("+map.url+")");
+    			$(el).siblings(".newName").val(map.fileName);
+    			//대표 이미지와 추가 이미지 구분
+    			if($(el).prop("id") == "defimg")return;//대표이미지인 경우 여기서 함수종료
+    			
+    			//추가이미지인경우 아래문장실행
+    			if(idx < 3)addTag();
+    			
+    			
+    		}	
+    	});
+    }
+    
+    var idx=1;
+    function addTag() {
+    	var tag=`
+   		<div class="addimg">
+    		<label class="img" for="addimg_${idx}" > + </label>
+    		<input id="addimg_${idx}" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+    	</div>
+   		`
+    	//클래스이름이 addimg인 모든 태그 선택자중 마지막 태그 뒤에 삽입
+    	$(".addimg").last().after(tag);
+    }
+  </script>
 </head>
 <body class="flex">
 	<th:block th:insert="~{layout/admin-layout :: header}"/>
@@ -41,11 +114,33 @@
 				    	</li>
 				    	<li>
 				    		<label>상품이미지</label>
+				    		<table>
+					    		<tr class="dep1">
+				    				<td>대표이미지</td>
+				    				<td>
+				    					<div>
+				    						<label class="img" for="defimg" th:style="|background-image: url('${detail.defImgUrl}');|">+</label>
+				    						<input id="defimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+				    						<input type="hidden" class="newName" name="newName">
+				    					</div>
+				    				</td>
+				    			</tr>
+				    			<tr class="dep1">
+				    				<td>추가이미지</td>
+				    				<td class="flex" id="addimg-wrap">
+				    					<div class="addimg">
+				    						<label class="img" for="addimg">+</label>
+				    						<input id="addimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+				    					</div>
+				    					<!-- 여기에 동적 삽입 -->
+				    				</td>
+				    			</tr>
+			    			</table>
 				    		<ol>
-				    			<li class="img">
+				    			<li class="img-btn">
 				    				<div class="flex" >
-				    					<div class="img-edit img-ctl">수정</div>
-				    					<div class="img-del img-ctl">삭제</div>
+				    					<div class="img-edit img-ctl"><button type="button">수정</button></div>
+				    					<div class="img-del img-ctl"><button type="button">삭제</button></div>
 				    				</div>
 				    			</li>
 				    		</ol>

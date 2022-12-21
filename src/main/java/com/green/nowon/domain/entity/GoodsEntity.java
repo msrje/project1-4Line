@@ -51,22 +51,22 @@ public class GoodsEntity extends BaseDateEntity{
 	//양방향설정
 	@Builder.Default
 	@OneToMany(mappedBy = "goods")
-	List<GoodsImg> imgs=new ArrayList<>();
+	List<GoodsImgEntity> imgs=new ArrayList<>();
 	
 	public String defImgUrl() {
-		GoodsImg def=imgs.get(0);
+		GoodsImgEntity def=imgs.get(0);
 		return def.getUrl()+def.getNewName();
 	}
 	
 	//이미지 삽입 편의메서드
-	public GoodsEntity addImg(GoodsImg gimg) {
+	public GoodsEntity addImg(GoodsImgEntity gimg) {
 		imgs.add(gimg);
 		return this;
 	}
 	
 	//대표이미지만 추출하는 편의메서드
-	public GoodsImg defImg() {
-		for(GoodsImg gimg:imgs) {
+	public GoodsImgEntity defImg() {
+		for(GoodsImgEntity gimg:imgs) {
 			if(gimg.isDef()==true)
 				return gimg;
 		}

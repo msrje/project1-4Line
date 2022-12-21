@@ -1,10 +1,15 @@
 package com.green.nowon.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.green.nowon.domain.dto.goods.GoodsInsertDTO;
 import com.green.nowon.service.GoodsService;
@@ -15,18 +20,23 @@ public class GoodsController {
 	@Autowired
 	GoodsService gService;
 	
-	@GetMapping("/admin/goods")
+	@GetMapping("/admin/goods/reg")
 	public String goods() {
 		return "goods/reg";
 	}
 	
-	@GetMapping("/admin/goods/reg")
+	@PostMapping("/admin/goods/reg")
 	public String goodsInsert(GoodsInsertDTO dto) {
 		gService.save(dto);
 		return "redirect:/admin/goods/list";
 	}
-	
 
+	@ResponseBody//응답데이터를 json타입으로 리턴합니다. 
+	@PostMapping("/admin/temp-upload")
+	public Map<String,String> tempUpload(MultipartFile gimg) {
+		return gService.fileTempUpload(gimg);
+	}
+	
 	@GetMapping("/comm/goods/list")
 	public String userGoodsList(Model model) {
 		gService.findAll(model);

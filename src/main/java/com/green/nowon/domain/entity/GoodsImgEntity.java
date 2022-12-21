@@ -29,7 +29,7 @@ import lombok.ToString;
 sequenceName = "seq_img", initialValue = 1, allocationSize = 1)
 @Table(name = "picture")
 @Entity
-public class GoodsImg extends BaseDateEntity{
+public class GoodsImgEntity extends BaseDateEntity{
 	
 	@Id
 	@GeneratedValue(generator = "gen_seq_img", strategy = GenerationType.SEQUENCE)
@@ -40,19 +40,18 @@ public class GoodsImg extends BaseDateEntity{
 	private String orgName;
 	@Column(nullable = false)
 	private String newName;
-	@Column(nullable = false)
-	private long size;
 	
 	private boolean def;
 
 	//대표이미지를 세팅해주는 편의메서드
-	public GoodsImg def(boolean def) {
+	public GoodsImgEntity def(boolean def) {
 		this.def=def;
 		return this;
 	}
-
 	
-
+	@JoinColumn//gno
+	@ManyToOne
+	private GoodsEntity goods;
 	
 
 }

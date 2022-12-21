@@ -66,7 +66,9 @@
     			console.log(map);
     		
     			$(el).siblings(".img").css("background-image", "url("+map.url+")");
-    			$(el).siblings(".newName").val(map.fileName);
+    			$(el).siblings(".newName").val(map.newName);
+    			$(el).siblings(".orgName").val(map.orgName);
+    			$(el).siblings(".size").val(map.size);
     			//대표 이미지와 추가 이미지 구분
     			if($(el).prop("id") == "defimg")return;//대표이미지인 경우 여기서 함수종료
     			
@@ -84,6 +86,8 @@
    		<div class="addimg">
     		<label class="img" for="addimg_${idx}" > + </label>
     		<input id="addimg_${idx}" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+			<input type="hidden" class="newName" name="newName">
+			<input type="hidden" class="orgName" name="orgName">
     	</div>
    		`
     	//클래스이름이 addimg인 모든 태그 선택자중 마지막 태그 뒤에 삽입
@@ -96,8 +100,9 @@
     <main>
     	<h1>메인컨텐츠</h1>
     	<div class="wrap">
-    		<p class="pagetitle">[상품등록 페이지]</p>
-    		<form class="form" action="/admin/goods/reg" method="get">
+		<p class="pagetitle">[상품등록 페이지]</p>
+    		<form class="form" action="/admin/goods/reg" method="post">
+    		
 	    		<table class="all">
 	    			<tr>
 	    				<td>카테고리</td>
@@ -118,6 +123,8 @@
 	    						<label class="img" for="defimg">+</label>
 	    						<input id="defimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
 	    						<input type="hidden" class="newName" name="newName">
+	    						<input type="hidden" class="orgName" name="orgName">
+	    						<input type="hidden" class="size" name="size">
 	    					</div>
 	    				</td>
 	    			</tr>
@@ -127,6 +134,9 @@
 	    					<div class="addimg">
 	    						<label class="img" for="addimg">+</label>
 	    						<input id="addimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+	    						<input type="hidden" class="newName" name="newName">
+	    						<input type="hidden" class="orgName" name="orgName">
+	    						<input type="hidden" class="size" name="size">
 	    					</div>
 	    					<!-- 여기에 동적 삽입 -->
 	    				</td>

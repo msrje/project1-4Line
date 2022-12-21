@@ -6,9 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface GoodsImgRepository extends JpaRepository<GoodsImg, Long>{
+public interface GoodsImgRepository extends JpaRepository<GoodsImgEntity, Long>{
 	
-	Optional<GoodsImg> findByUrlAndOrgName(String pATH, String fileName);
+	Optional<GoodsImgEntity> findByUrlAndOrgName(String pATH, String fileName);
 
 	void deleteByUrlAndNewName(String pATH, String fileName);
 

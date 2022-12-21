@@ -39,7 +39,7 @@ public class GoodsServiceProcess implements GoodsService{
 	@Override
 	public void save(GoodsInsertDTO dto) {
 		GoodsEntity entity =gRepository.save(dto.entity());
-		dto.toGoodsImgs(entity, locationUpload).forEach(goodsRepo::save);
+		dto.toItemListImgs(entity, locationUpload).forEach(goodsRepo::save);
 	}
 
 	

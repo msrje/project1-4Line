@@ -16,7 +16,12 @@
         $('#summernote').summernote();
         //1차 카테고리 셋팅
         getCategory();
+        $("img-del").click(deleteImgTag);
     });
+    function deleteImgTag(){
+    	$(".addimg:last-child").remove();
+    }
+    
     
     function cateSelected(el){
     
@@ -129,8 +134,10 @@
 				    				<td>추가이미지</td>
 				    				<td class="flex" id="addimg-wrap">
 				    					<div class="addimg">
-				    						<label class="img" for="addimg">+</label>
+				    						<th:block th:each="idto:${detail.imgs}">
+				    						<label class="img" for="addimg"   th:style="|background-image: url('${idto.imgUrl}');|">+</label>
 				    						<input id="addimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+				    						</th:block>
 				    					</div>
 				    					<!-- 여기에 동적 삽입 -->
 				    				</td>

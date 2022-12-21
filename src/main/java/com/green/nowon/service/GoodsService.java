@@ -20,4 +20,5 @@ public interface GoodsService {
 	void adminDetail(long gno, Model model);
 
 	Map<String,String> fileTempUpload(MultipartFile gimg);
+
 }

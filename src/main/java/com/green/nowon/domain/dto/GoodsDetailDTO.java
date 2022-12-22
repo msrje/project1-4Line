@@ -23,8 +23,6 @@ public class GoodsDetailDTO {
 	
 	//대표이미지 사용을 위해 미리 출력
 	private String defImgUrl;
-	//쪼꼬미 이미지 출력을 위해 
-	private List<GoodsImgDTO> imgs;
 	
 	public GoodsDetailDTO(GoodsEntity e) {
 		this.gno =e.getGno();
@@ -34,10 +32,6 @@ public class GoodsDetailDTO {
 		this.stock = e.getStock();
 		this.createdDate=e.getCreatedDate();
 		this.updatedDate=e.getUpdatedDate();
-		
-		imgs=e.getImgs().stream()
-				.map(GoodsImgDTO::new)
-				.collect(Collectors.toList());
 		
 		this.defImgUrl = e.defImg().getUrl()+e.defImg().getNewName();
 	}

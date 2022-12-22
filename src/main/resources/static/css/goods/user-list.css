@@ -55,12 +55,13 @@
 	margin:0 5%;
 }
 .wrap>.goodslist ul li>.box>.goodsImg{
-	background-image: url("/images/goods/sandwich_cl01_01.jpg");
 	width: 200px;
 	height: 200px;
 	background-size:contain;
 	background-repeat: no-repeat;
 	background-position: center;
+	display: inline-block;
+	content: "";
 }
 .wrap>.goodslist ul li>.box>.goodsName{
 	margin-left: 20px;

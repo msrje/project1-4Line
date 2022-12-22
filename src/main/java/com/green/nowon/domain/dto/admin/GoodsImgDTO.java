@@ -15,6 +15,8 @@ public class GoodsImgDTO {
 	//편의필드
 	private String imgUrl;
 	
+	private String orgImgUrl;
+	
 	public GoodsImgDTO(GoodsImgEntity e) {
 		this.fno = e.getFno();
 		this.orgName = e.getOrgName();
@@ -23,6 +25,7 @@ public class GoodsImgDTO {
 		this.defImg = e.isDef();
 		
 		this.imgUrl = url+newName;
+		this.orgImgUrl = url+orgName;
 	}
 
 

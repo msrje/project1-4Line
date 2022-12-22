@@ -39,7 +39,7 @@ public class GoodsInsertDTO {
 					.goods(entity)
 					.build();
 			imgs.add(gim);
-	}
+		}
 		//temp 폴더 상위 폴더인 upload로 이동
 		MyFileUtils.moveUploadLocationFromTemp(newName, url);
 		return imgs;

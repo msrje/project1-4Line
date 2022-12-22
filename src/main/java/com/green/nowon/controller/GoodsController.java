@@ -37,6 +37,7 @@ public class GoodsController {
 		return gService.fileTempUpload(gimg);
 	}
 	
+	
 	@GetMapping("/comm/goods/list")
 	public String userGoodsList(Model model) {
 		gService.findAll(model);

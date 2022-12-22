@@ -35,7 +35,7 @@
 				<li class="flex">
 					<!-- 이미지 -->
 					<div class="box" th:each="dto:${list}">
-						<div class="goodsImg">
+						<div class="goodsImg" th:style="|background-image: url('${dto.defImgUrl}');|">
 							<a th:href="|/common/goods/${dto.gno}|"></a>
 						</div>
 						<!-- 가격 평점 -->

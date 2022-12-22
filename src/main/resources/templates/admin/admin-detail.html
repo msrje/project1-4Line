@@ -16,7 +16,12 @@
         $('#summernote').summernote();
         //1차 카테고리 셋팅
         getCategory();
+        $("img-del").click(deleteImgTag);
     });
+    function deleteImgTag(){
+    	$(".addimg:last-child").remove();
+    }
+    
     
     function cateSelected(el){
     
@@ -79,6 +84,7 @@
     
     var idx=1;
     function addTag() {
+    	if(idx<=3)return;
     	var tag=`
    		<div class="addimg">
     		<label class="img" for="addimg_${idx}" > + </label>
@@ -121,7 +127,9 @@
 				    					<div>
 				    						<label class="img" for="defimg" th:style="|background-image: url('${detail.defImgUrl}');|">+</label>
 				    						<input id="defimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
-				    						<input type="hidden" class="newName" name="newName">
+				    						<input type="hidden" class="newName" name="newName" th:value="${detail.defImgUrl}">
+				    						<input type="hidden" class="orgName" name="orgName">
+				    						<input type="hidden" class="size" name="size">
 				    					</div>
 				    				</td>
 				    			</tr>
@@ -129,8 +137,13 @@
 				    				<td>추가이미지</td>
 				    				<td class="flex" id="addimg-wrap">
 				    					<div class="addimg">
-				    						<label class="img" for="addimg">+</label>
+				    						<th:block th:each="idto:${detail.imgs}">
+				    						<label class="img" for="addimg"   th:style="|background-image: url('${idto.imgUrl}');|">+</label>
 				    						<input id="addimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+				    						<input type="hidden" class="newName" name="newName">
+				    						<input type="hidden" class="orgName" name="orgName">
+				    						<input type="hidden" class="size" name="size">	
+				    						</th:block>
 				    					</div>
 				    					<!-- 여기에 동적 삽입 -->
 				    				</td>

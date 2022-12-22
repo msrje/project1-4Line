@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -68,6 +70,8 @@ public class GoodsServiceProcess implements GoodsService{
 	public Map<String, String> fileTempUpload(MultipartFile gimg) {
 		return MyFileUtils.fileUpload(gimg, locationTemp);
 	}
+	
+	@Transactional
 	@Override
 	public void findAll(Model model) {
 		List<GoodsListDTO> result=gRepository.findAll().stream()

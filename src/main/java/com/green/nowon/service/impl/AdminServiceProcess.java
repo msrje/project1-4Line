@@ -1,17 +1,22 @@
 package com.green.nowon.service.impl;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import com.green.nowon.domain.dto.admin.AdminUpdateDTO;
+import com.green.nowon.domain.dto.member.MemberListInsertDTO;
 import com.green.nowon.domain.entity.GoodsEntity;
 import com.green.nowon.domain.entity.GoodsEntityRepository;
 import com.green.nowon.domain.entity.GoodsImgEntityRepository;
+import com.green.nowon.domain.entity.MemberEntityRepository;
 import com.green.nowon.service.AdminService;
 
 import lombok.RequiredArgsConstructor;
@@ -32,8 +37,8 @@ public class AdminServiceProcess implements AdminService {
 	@Autowired
 	private MemberEntityRepository mrepo;
 	
-  @Autowired
-	GoodsImgEntityRepository giRepository;
+	@Autowired
+	private GoodsImgEntityRepository giRepository;
 	
 	@Transactional
 	@Override
@@ -70,4 +75,5 @@ public class AdminServiceProcess implements AdminService {
 		model.addAttribute("list", result);
 		
 	}
+	
 }

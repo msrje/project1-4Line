@@ -38,6 +38,11 @@ public class AdminController {
 		return "admin/member-list";
 	}
 	
+	@GetMapping("/admin/goods/list")
+	public String list(Model model) {
+		service.findAll(model);
+		return "admin/admin-list";
+	}
 
 	
 	@GetMapping("/admin")
@@ -45,11 +50,6 @@ public class AdminController {
 		return "admin/default";
 	}
 	
-	@GetMapping("/admin/goods/list")
-	public String list(Model model) {
-		service.findAll(model);
-		return "admin/admin-list";
-	}
 	
 	@PatchMapping("/admin/goods/{gno}")
 	public String update(@PathVariable long gno, AdminUpdateDTO dto) {

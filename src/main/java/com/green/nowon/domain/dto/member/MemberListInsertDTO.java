@@ -9,7 +9,7 @@ import lombok.Getter;
 
 
 @Getter
-public class MemberListInsertDTO {
+public class MemberListInsertDTO { 	//admin회원리스트DTO
 	private long mno;
 	private String email;
 	private String nickName;

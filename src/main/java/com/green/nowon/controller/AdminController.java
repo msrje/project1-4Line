@@ -28,6 +28,13 @@ public class AdminController {
 	
 	@Autowired
 	private GoodsService service;
+	
+	@GetMapping("/admin/member/list")
+	public String member(Model model) {
+		aService.findAll(model);
+		return "admin/member-list";
+	}
+	
 
 	
 	@GetMapping("/admin")

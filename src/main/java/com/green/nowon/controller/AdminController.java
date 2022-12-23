@@ -1,5 +1,7 @@
 package com.green.nowon.controller;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -63,6 +65,7 @@ public class AdminController {
 		return "redirect:/admin/goods/list";
 	}
 	
+	@Transactional
 	@GetMapping("/admin/goods/{gno}")
 	public String adminDetail(@PathVariable long gno, Model model) {
 		service.adminDetail(gno, model);

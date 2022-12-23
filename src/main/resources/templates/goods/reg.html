@@ -12,6 +12,8 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <script>
+    var idx=1;
+    
     $(document).ready(function() {
         $('#summernote').summernote();
         
@@ -80,7 +82,7 @@
     	});
     }
     
-    var idx=1;
+    
     function addTag() {
     	var tag=`
    		<div class="addimg">
@@ -92,6 +94,7 @@
    		`
     	//클래스이름이 addimg인 모든 태그 선택자중 마지막 태그 뒤에 삽입
     	$(".addimg").last().after(tag);
+    	idx++;
     }
   </script>
 </head>

@@ -11,12 +11,22 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-    <script type="text/javascript">
+    <script>
+    var idx=1;
     $(document).ready(function() {
         $('#summernote').summernote();
         //1차 카테고리 셋팅
         getCategory();
+        $(".img-edit").click(addTag);
+        //$(".img-del").click(deleteTag);
     });
+    
+    function deleteTag(){
+    	if(idx<2)return;
+    	$(".addimg:last-child").remove();
+    	idx--;
+    }
+    
     
     function cateSelected(el){
     
@@ -65,7 +75,9 @@
     			console.log(map);
     		
     			$(el).siblings(".img").css("background-image", "url("+map.url+")");
-    			$(el).siblings(".newName").val(map.fileName);
+    			$(el).siblings(".newName").val(map.newName);
+    			$(el).siblings(".orgName").val(map.orgName);
+    			$(el).siblings(".size").val(map.size);
     			//대표 이미지와 추가 이미지 구분
     			if($(el).prop("id") == "defimg")return;//대표이미지인 경우 여기서 함수종료
     			
@@ -76,17 +88,20 @@
     		}	
     	});
     }
-    
-    var idx=1;
+   
     function addTag() {
+    	if(idx>3)return;
     	var tag=`
    		<div class="addimg">
     		<label class="img" for="addimg_${idx}" > + </label>
     		<input id="addimg_${idx}" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+    		<input type="hidden" class="newName" name="newName">
+			<input type="hidden" class="orgName" name="orgName">
     	</div>
    		`
     	//클래스이름이 addimg인 모든 태그 선택자중 마지막 태그 뒤에 삽입
     	$(".addimg").last().after(tag);
+   		idx++;
     }
   </script>
 </head>
@@ -115,23 +130,17 @@
 				    	<li>
 				    		<label>상품이미지</label>
 				    		<table>
-					    		<tr class="dep1">
-				    				<td>대표이미지</td>
-				    				<td>
-				    					<div>
-				    						<label class="img" for="defimg" th:style="|background-image: url('${detail.defImgUrl}');|">+</label>
-				    						<input id="defimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
-				    						<input type="hidden" class="newName" name="newName">
-				    					</div>
-				    				</td>
-				    			</tr>
 				    			<tr class="dep1">
-				    				<td>추가이미지</td>
 				    				<td class="flex" id="addimg-wrap">
+				    				<th:block th:each="idto:${detail.imgs}">
 				    					<div class="addimg">
-				    						<label class="img" for="addimg">+</label>
+				    						<label class="img" for="addimg"   th:style="|background-image: url('${idto.imgUrl}');|">+</label>
 				    						<input id="addimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+				    						<input type="hidden" class="newName" name="newName" th:value="${idto.imgUrl}">
+				    						<input type="hidden" class="orgName" name="orgName" th:value="${idto.orgImgUrl}">
+				    						<input type="hidden" class="size" name="size">	
 				    					</div>
+				    				</th:block>
 				    					<!-- 여기에 동적 삽입 -->
 				    				</td>
 				    			</tr>
@@ -139,8 +148,8 @@
 				    		<ol>
 				    			<li class="img-btn">
 				    				<div class="flex" >
-				    					<div class="img-edit img-ctl"><button type="button">수정</button></div>
-				    					<div class="img-del img-ctl"><button type="button">삭제</button></div>
+				    					<div class="img-edit img-ctl"><button type="button">추가</button></div>
+				    					<div class="img-del img-ctl"><button type="button" onclick="deleteTag()">삭제</button></div>
 				    				</div>
 				    			</li>
 				    		</ol>

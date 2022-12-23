@@ -19,33 +19,3 @@
 input[type=file] {
 	display: none;
 }
-
-.pagetitle {
-	font-size: 30px;
-	font-weight: bold;
-	position: relative;
-	top: 10px;
-	left: 540px;
-
-}
-
-.form {
-	width: 1000px;
-	padding: 30px;
-	border: 2px solid rgba(255, 101, 11, 50%);
-	margin: 40px;
-	position: relative;
-	top: -10px;
-	left: 115px;
-}
-
-.all{
-	font-size: 16px;
-	position: relative;
-	left: 130px;
-}
-
-.dep2{
-	position: relative;
-	left: 630px;
-}

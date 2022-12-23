@@ -11,18 +11,21 @@ public class GoodsImgDTO {
 	private String orgName;
 	private String newName;
 	private String url;
-	private long size;
+	private boolean defImg;
 	//편의필드
-	private String imgUri;
+	private String imgUrl;
 	
-	public GoodsImgDTO(GoodsImgDTO e) {
+	private String orgImgUrl;
+	
+	public GoodsImgDTO(GoodsImgEntity e) {
 		this.fno = e.getFno();
 		this.orgName = e.getOrgName();
 		this.newName = e.getNewName();
 		this.url = e.getUrl();
-		this.size = e.getSize();
+		this.defImg = e.isDef();
 		
-		this.imgUri = url+newName;
+		this.imgUrl = url+newName;
+		this.orgImgUrl = url+orgName;
 	}
 
 

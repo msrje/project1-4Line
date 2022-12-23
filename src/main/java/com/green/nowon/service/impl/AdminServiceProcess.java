@@ -39,5 +39,14 @@ public class AdminServiceProcess implements AdminService {
 		repo.deleteById(gno);
 		
 	}
-
+	
+	//admin회원리스트
+	@Override
+	public void findAll(Model model) {
+		List<MemberListInsertDTO> result = mrepo.findAll().stream()
+				.map(MemberListInsertDTO::new).collect(Collectors.toList());
+		
+		model.addAttribute("list", result);
+		
+	}
 }

@@ -19,6 +19,9 @@ public class AdminServiceProcess implements AdminService {
 	@Autowired
 	private GoodsEntityRepository repo;
 	
+	@Autowired
+	private MemberEntityRepository mrepo;
+	
 //	@Transactional
 	@Override
 	public void update(long gno, AdminUpdateDTO dto) {

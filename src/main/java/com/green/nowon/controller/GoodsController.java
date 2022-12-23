@@ -20,6 +20,13 @@ public class GoodsController {
 	@Autowired
 	GoodsService gService;
 	
+	//상품디테일페이지
+	@GetMapping("/common/goods/{gno}")
+	public String detail(@PathVariable long gno, Model model) {
+		gService.detail(gno, model);
+		return "/goods/detail";
+	}
+	
 	@GetMapping("/admin/goods/reg")
 	public String goods() {
 		return "goods/reg";

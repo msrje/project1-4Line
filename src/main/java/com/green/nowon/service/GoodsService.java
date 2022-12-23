@@ -21,4 +21,7 @@ public interface GoodsService {
 
 	Map<String,String> fileTempUpload(MultipartFile gimg);
 
+	//상품디테일페이지메서드
+	void detail(long gno, Model model);
+
 }

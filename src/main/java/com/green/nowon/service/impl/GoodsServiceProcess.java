@@ -105,6 +105,16 @@ public class GoodsServiceProcess implements GoodsService{
 		model.addAttribute("detail", result);
 		
 	}
+	
+	//상품디테일페이지
+	@Transactional
+	@Override
+	public void detail(long gno, Model model) {
+		model.addAttribute("detail", gRepository.findById(gno)
+				.map(GoodsDetailDTO::new)
+				.orElseThrow());
+		
+	}
 
 
 

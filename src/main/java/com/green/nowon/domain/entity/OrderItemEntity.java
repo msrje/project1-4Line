@@ -17,21 +17,23 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Table(name = "category_goods")
+@Table(name = "order_item")
 @Entity
-public class CategoryGoodsEntity {
+public class OrderItemEntity {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long cgno;
+	private long oino;
 	
-	@JoinColumn
+	private int orderPrice;//주문금액
+	private int quantity;//주문수량
+	
+	@JoinColumn//ono
 	@ManyToOne
-	private CategoryEntity category;
+	private OrderEntity order;
 	
-	@JoinColumn
+	@JoinColumn//gno
 	@ManyToOne
 	private GoodsEntity goods;
-
-
-
+	
 }

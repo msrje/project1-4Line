@@ -1,6 +1,10 @@
 package com.green.nowon.domain.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,21 +21,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Table(name = "category_goods")
+@Table(name = "my_order")
 @Entity
-public class CategoryGoodsEntity {
+public class OrderEntity extends BaseDateEntity{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long cgno;
+	private long ono;//주문번호
 	
-	@JoinColumn
-	@ManyToOne
-	private CategoryEntity category;
+	private LocalDateTime orderedDate;//주문일
 	
-	@JoinColumn
+	@Enumerated(EnumType.STRING)
+	private OrderStaus status;//주문상태
+	
+	@JoinColumn//member_mno
 	@ManyToOne
-	private GoodsEntity goods;
-
-
+	private MemberEntity member; //주문자정보
 
 }

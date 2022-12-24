@@ -36,7 +36,7 @@
 					<!-- 이미지 -->
 					<div class="box" th:each="dto:${list}">
 						<div class="goodsImg" th:style="|background-image: url('${dto.defImgUrl}');|">
-							<a th:href="|/common/goods/${dto.gno}|"></a>
+							<a class="in" th:href="|/common/goods/${dto.gno}|">디테일페이지</a>
 						</div>
 						<!-- 가격 평점 -->
 						<div class="goodsName">

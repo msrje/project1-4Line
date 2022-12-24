@@ -13,7 +13,7 @@ import lombok.extern.log4j.Log4j2;
 public class MyUserDetailsService implements UserDetailsService{
 	
 	@Autowired
-	MemberEntityRepository mRepository;
+	private MemberEntityRepository mRepository;
 	
 	//DB의 테이블에서 인증처리를 하기 위한 메서드
 	@Override

@@ -54,6 +54,15 @@
 .wrap>.goodslist ul li>.box{
 	margin:0 5%;
 }
+
+.in { /* 사진 누를때 디테일 페이지 */
+	position: relative;
+	top: 90px;
+	left: 20px;
+	padding: 80px;
+	font-size: 0px;
+}
+
 .wrap>.goodslist ul li>.box>.goodsImg{
 	width: 200px;
 	height: 200px;

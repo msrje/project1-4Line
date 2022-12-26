@@ -105,15 +105,16 @@
 	background: white; /* 배경 흰색 */
 	position:absolute; 
 	left:0; 
-	top:-20px; 
+	top:-5px; 
 	width:100%; 
 	padding-top:87px; 
 	z-index:2; 
 	
 }
+
 .menu_wrap .dep2 a {
 	display: block;
-	padding: 8px 0 9px; 
+	padding: 2px 0 9px; 
 	font-size: 15px;
 	color: #808080; 
 }

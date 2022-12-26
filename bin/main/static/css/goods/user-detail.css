@@ -1,0 +1,38 @@
+@charset "UTF-8";
+    	.bg-img{
+    		background-repeat:no-repeat;
+    		background-position: center;
+    		background-size: contain;
+    	}
+    	#detail>.wrap{
+    		width: 1020px;
+    		margin: 0 auto;
+    	}
+    	#detail>.wrap .detail-top .img-area .defImg{
+    		width: 420px;
+    		height: 420px;
+    	}
+    	#detail>.wrap .detail-top .img-area .addImg-wrap .addImg{
+    		width: 80px;
+    		height: 80px;
+    	}
+    	#detail>.wrap .detail-top .goods-info{
+    		width: 550px;
+    	}
+    	#detail>.wrap .detail-top .goods-info ul li{
+    		margin-top: 20px;
+    	}
+    	#detail>.wrap .detail-top .goods-info ul li dl dt{
+    		width: 160px; 
+    		color: #777;
+    	}
+    	#detail>.wrap .detail-top .goods-info ul li .title{
+    		font-size: 26px;
+    		font-weight: bold;
+    		line-height: 30px;
+    	}
+    	
+ .page-tit{
+ text-align: center;
+ font-size: 25px;
+ }

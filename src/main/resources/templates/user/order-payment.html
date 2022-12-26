@@ -193,7 +193,7 @@
 				<section>
 					<div class="wrap" sec:authorize="isAuthenticated()">
 						<input type="hidden" id="user-email" th:value="${#authentication.name}" readonly="readonly">
-						<input type="hidden" id="user-name" th:value="${#authentication.principal.name}" readonly="readonly">
+						<input type="hidden" id="user-name" th:value="${#authentication.principal.nickName}" readonly="readonly">
 						<button type="button" id="btn-pg" onclick="btnPgClicked()">결제하기</button>
 					</div>
 				</section>	

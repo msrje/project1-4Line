@@ -12,24 +12,24 @@
 <body>
 	<main>
 		<div class="cart" id="content">
-			<h2 class="title">장바구니</h2>
-			<div th:if="${!#lists.isEmpty(list)}" class="data_none cart_box">
-				<ol>
+			<h2 class="title">장바구니</h2>		
+			<div th:if="${!#lists.isEmpty(list)}" class="data_y cart_box">
+				<ol class="flex between">
 					<li>선택</li>
 					<li>상품이미지</li>
 					<li>상품정보</li>
 					<li>구매수량</li>
 					<li>토탈금액</li>
-					<li>배송비</li>
+					<li>배달비</li>
 					<li>주문금액</li>
 					<li>주문하기</li>
 				</ol>
-				<ol th:each="dto : ${list}">
+				<ol class="flex between" th:each="dto : ${list}">
 					<li>
 						<input type="checkbox">
 						<input class="cartGoodsNo" th:id="${'ci-no-' + dtoStat.index}" type="hidden" th:value="${dto.no}">
 					</li>
-					<li><img alt="상품목록이미지" th:src="${dto.goods.defImgUrl}"></li>
+					<li><img alt="상품목록이미지" th:src="${dto.goods.defImgUrl}" style="height: 100px; width: 100px;"></li>
 					<li>
 						<p th:text="${dto.goods.title}">상품명</p>
 						<p th:text="${#numbers.formatInteger(dto.goods.price, 0, 'COMMA')}">단가</p>

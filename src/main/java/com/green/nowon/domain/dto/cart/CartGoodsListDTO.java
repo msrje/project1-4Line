@@ -21,6 +21,5 @@ public class CartGoodsListDTO {
 		this.goods = new GoodsListDTO(e.getGoods());
 		this.dPrice = 2500;
 	}
-	
-	
+
 }

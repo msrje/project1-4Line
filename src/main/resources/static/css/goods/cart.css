@@ -17,6 +17,14 @@
     letter-spacing: -0.05em;
     padding: 73px 0 50px;
 }
+.data_y{
+    text-align: center;
+}
+.data_y p {
+    position: relative;
+    line-height: 18px;
+    letter-spacing: -0.05em;
+}
 .data_none{
     padding: 172px 0;
     text-align: center;
@@ -29,7 +37,7 @@
     padding-top: 58px;
 }
 .data_none p:before {
-    content: '';
+	content: '';
     position: absolute;
     top: 0;
     left: 50%;

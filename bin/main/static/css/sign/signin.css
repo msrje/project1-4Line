@@ -197,3 +197,27 @@
     vertical-align: top;
     margin-right: 10px;
 }
+
+.signin_wrapper>.signin_social ul li{
+	text-align: center;
+	margin: 20px auto;
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	cursor: pointer;	
+}
+.signin_wrapper>.signin_social ul li a{
+	width: 50px;
+	text-align: center;
+	float: left;
+}
+.naver_icon{
+	background-image: url("/images/common/sns_naver.png");
+}
+.google_icon{
+	background-image: url("/images/common/sns_google.png");
+}
+.kakao_icon{
+	background-image: url("/images/common/sns_kakao.png");
+}

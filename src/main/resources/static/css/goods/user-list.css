@@ -1,23 +1,28 @@
 @charset "UTF-8";
 
+.wrap{
+	max-width: 1170px;
+    margin: 0 auto;
+}
+
 .wrap>.category_wrap{
+	background: url(/images/common/img_visual_sandwich.jpg) no-repeat;
 	width: 100%;
 	height: 100%;
 }
 
 .wrap>.category_wrap>.goods_title{
 	position : static;
-	color: #292929;
-	font-size: 40px;
+	color: #fff;
+    font-size: 35px;
 	padding: 50px 0;
 	text-align: center;
 }
 .wrap>.category_wrap>.category1{
 	float:left;
-	left: 5%;
     text-align: center;
-    position: absolute;
-    width: 100%;
+    position: relative;
+    margin-top: 25px;
 }
 
 .wrap>.category_wrap>.category1 li{
@@ -33,27 +38,36 @@
 }
 .wrap>.category_wrap>.category2{
 	float: right;
-    position: absolute;
-    right: 10%;
+    position: relative;
     margin: 0 auto;
     border: none;
-    font-size: 20px;
+    font-size: 16px;
+    margin-top: 25px;
 }
 .wrap>.goodslist{
 	width: 100%;
 }
 .wrap>.goodslist ul li{
-	margin: 80px;
+	margin: 80px auto;
     position: relative;
-    width: 90%;
+    width: 100%;
     flex-wrap: wrap;
 }
 .wrap>.goodslist ul li:last-child{
 	margin-bottom: 120px;
 }
 .wrap>.goodslist ul li>.box{
-	margin:0 5%;
+	margin:0 40px;
 }
+
+.in { /* 사진 누를때 디테일 페이지 */
+	position: relative;
+	top: 90px;
+	left: 20px;
+	padding: 80px;
+	font-size: 0px;
+}
+
 .wrap>.goodslist ul li>.box>.goodsImg{
 	width: 200px;
 	height: 200px;

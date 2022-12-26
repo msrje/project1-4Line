@@ -34,6 +34,7 @@ public class CartServiceProcess implements CartService{
 	private GoodsEntityRepository goodsRepo;
 	
 	//장바구니 페이지
+
 		@Transactional
 		@Override
 		public void cart(Model model, String email) {
@@ -71,4 +72,5 @@ public class CartServiceProcess implements CartService{
 			);
 	
 	}
+
 }

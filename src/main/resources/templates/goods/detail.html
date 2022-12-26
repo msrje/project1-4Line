@@ -123,10 +123,10 @@
 										function btnCartClicked(){
 											
 											
-											if(!loginCheck()){
+											if(!signinCheck()){
 												var result=confirm("카트저장은 로그인 이후 가능합니다.\n로그인페이지로 이동할까요?");
 												if(result){
-													location.href="/member/login";
+													location.href="/members/signin";
 												}
 												return;
 											}
@@ -136,12 +136,12 @@
 											var no=$("#no").val();
 											
 											$.ajax({
-												url: "/user/cart-item",
+												url: "/member/cart",
 												data:{quantity:ea, itemNo:no},
 												type: "post",
 												success:function(){
 													if(!confirm("장바구니에 상품을 담았습니다.\n장바구니 페이지로 이동할까요?"))return;
-													location.href="/user/cart-items";
+													location.href="/member/cart";
 													
 												},
 												error:function(){
@@ -152,16 +152,16 @@
 										}
 										
 										
-										function loginCheck(){
-											var isLogin=false;
+										function signinCheck(){
+											var isSignin=false;
 											$.ajax({
-												url:"/member/login-check",
+												url:"/member/signin-check",
 												async: false,
 												success:function(result){
-													isLogin=result;
+													isSignin=result;
 												}
 											})
-											return isLogin;
+											return isSignin;
 										}
 										
 										function btnOrderClicked(){

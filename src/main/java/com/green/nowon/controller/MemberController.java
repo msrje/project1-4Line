@@ -4,13 +4,14 @@
 package com.green.nowon.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.green.nowon.domain.dto.member.MemberInsertDTO;
 import com.green.nowon.service.MemberService;
-import com.green.nowon.service.impl.MemberServiceProcess;
 
 import lombok.RequiredArgsConstructor;
 
@@ -37,6 +38,14 @@ public class MemberController {
 	public String join(MemberInsertDTO dto) {
 		mService.save(dto);
 		return "redirect:/members/signin";
+	}
+	
+	@ResponseBody
+	@GetMapping("/member/signin-check")
+	public boolean loginCheck(Authentication auth) {
+		//로그인 시는 인증정보 확인 가능
+		//비로그인 시는 null
+		return auth==null ? false : true;
 	}
 	
 }

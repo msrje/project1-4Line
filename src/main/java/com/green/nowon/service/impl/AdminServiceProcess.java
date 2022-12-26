@@ -44,19 +44,18 @@ public class AdminServiceProcess implements AdminService {
 	@Override
 	public void update(long gno, AdminUpdateDTO dto) {
 		System.out.println(">>>>>>>>>>>>수정처리 실행");
-//		repo.findById(gno).map(entity->entity.update(dto));
-//		System.out.println(">>>>>>>>>>>>수정처리완료 확인");
 		GoodsEntity entityImg=null;
 		Optional<GoodsEntity> result= repo.findById(gno);
 		if(result.isPresent()) {
 			GoodsEntity entity=result.get();
 			entity.update(dto);
 			entityImg =repo.save(entity);
+			//이미지 디비내용물 삭제 작동안함
+			//이미지 저장 전에 삭제
+			giRepository.deleteByGoods_gno(gno);
+			//이미지 저장
+			dto.toItemListImgs(entityImg, locationUpload).forEach(giRepository::save);
 		}
-		//이미지 디비내용물 삭제 작동안함
-		dto.toItemListImgs(entityImg, locationUpload).forEach(giRepository::delete);
-		//이미지 저장
-		dto.toItemListImgs(entityImg, locationUpload).forEach(giRepository::save);
 		
 	}
 	//삭제

@@ -13,21 +13,21 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <script>
     var idx=1;
+    
     $(document).ready(function() {
         $('#summernote').summernote();
         //1차 카테고리 셋팅
         getCategory();
         $(".img-edit").click(addTag);
-        //$(".img-del").click(deleteTag);
     });
     
     function deleteTag(){
-    	if(idx<2)return;
+    	var last =$(".addimg").last();
+    	var first = $(".addimg:first-child");
+    	if(first==last)alert("같음");
     	$(".addimg:last-child").remove();
     	idx--;
     }
-    
-    
     function cateSelected(el){
     
   	var depth=$(el).index();	
@@ -94,12 +94,14 @@
     	var tag=`
    		<div class="addimg">
     		<label class="img" for="addimg_${idx}" > + </label>
-    		<input id="addimg_${idx}" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+    		<input class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
     		<input type="hidden" class="newName" name="newName">
 			<input type="hidden" class="orgName" name="orgName">
     	</div>
    		`
+   		var addimg = $(".addimg");
     	//클래스이름이 addimg인 모든 태그 선택자중 마지막 태그 뒤에 삽입
+    	
     	$(".addimg").last().after(tag);
    		idx++;
     }

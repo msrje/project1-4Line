@@ -1,6 +1,3 @@
- 
-
-
 package com.green.nowon.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +25,19 @@ public class MemberController {
 	@GetMapping("/members/signup")
 	public String signup() {return "views/sign/signup";}
 	
+	@ResponseBody//nickNameCheck중복체크 
+	@PostMapping("/member/signup/nickNameCheck")
+	public boolean nickNameCheck() {
+		
+		return false;
+	}
+	
+	@ResponseBody//idCheck중복체크 
+	@PostMapping("/member/signup/idCheck")
+	public boolean idCheck() {
+		
+		return false;
+	}
 	
 	/**
 	 * 회원가입 

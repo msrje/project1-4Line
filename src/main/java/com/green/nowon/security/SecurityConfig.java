@@ -8,6 +8,9 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.firewall.DefaultHttpFirewall;
 import org.springframework.security.web.firewall.HttpFirewall;
@@ -36,6 +39,11 @@ public class SecurityConfig {
     }
 	
 	@Bean
+	OAuth2UserService<OAuth2UserRequest, OAuth2User> myOAuth2UserService() {
+		return new MyOAuth2UserService();
+	}
+	
+	@Bean
  	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
  		http
  			.authorizeRequests(authorize -> authorize
@@ -56,7 +64,12 @@ public class SecurityConfig {
  							)
  					.logout(logout->logout
  							.logoutSuccessUrl("/members/signin"))
- 					.csrf(csrf->csrf.disable())
+ 					.csrf(csrf->csrf.disable()
+ 							)
+ 					.oauth2Login(oauth2->oauth2
+ 							.loginPage("/members/signin")
+ 							.userInfoEndpoint().userService(myOAuth2UserService())
+ 							)
  					
  					;
  		return http.build();

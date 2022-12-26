@@ -44,6 +44,7 @@ public class MemberEntity extends BaseDateEntity{
 	@Column(unique = true)
 	private String nickName;
 	
+	private boolean social;
 	
 	@Builder.Default
 	@CollectionTable(name = "my_role")

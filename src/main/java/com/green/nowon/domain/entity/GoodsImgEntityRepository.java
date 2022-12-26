@@ -9,11 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface GoodsImgEntityRepository extends JpaRepository<GoodsImgEntity, Long>{
 	
 	Optional<GoodsImgEntity> findByUrlAndOrgName(String pATH, String fileName);
-
 	void deleteByUrlAndNewName(String pATH, String fileName);
-
-
-
-	
-
+	void deleteByGoods_gno(long gno);
 }

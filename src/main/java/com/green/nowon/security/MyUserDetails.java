@@ -21,9 +21,9 @@ public class MyUserDetails extends User{
 		super(username, password, authorities);
 	}
 	public MyUserDetails(MemberEntity entity) {
-		this(entity.getEmail(), entity.getPass(), entity.getRoles() //Set<MyRole>  --> Set<GrantedAuthority>
+		this(entity.getEmail(), entity.getPass(), entity.getRoles() //Set<MyRole> ---> Set<GrantedAuthority>
 				.stream() //Stream<MyRole>
-				.map(myRole->new SimpleGrantedAuthority(myRole.getRole()) ) //Stream<GrantedAuthority> "ROLE_USER" or ""
+				.map(myRole -> new SimpleGrantedAuthority(myRole.getRole())) //Stream<GrantedAuthority> "ROLE_USER" or "ROLE_ADMIN"
 				.collect(Collectors.toSet()));
 		
 		this.email=entity.getEmail();

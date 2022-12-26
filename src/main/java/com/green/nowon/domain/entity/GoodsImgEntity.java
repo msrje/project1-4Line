@@ -12,6 +12,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -49,10 +51,10 @@ public class GoodsImgEntity extends BaseDateEntity{
 		return this;
 	}
 	
+	@OnDelete(action= OnDeleteAction.CASCADE)//상품 삭제 cascade를 하여 삭제 실패
 	@JoinColumn//gno
 	@ManyToOne
 	private GoodsEntity goods;
 	
 
 }
-

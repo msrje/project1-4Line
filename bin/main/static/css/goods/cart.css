@@ -51,5 +51,114 @@
     overflow: hidden;
     box-sizing: border-box;
     margin: 0 auto;
+    padding: 0;
     width: 1170px;
+}
+.cart_box2{
+	background-color: #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 1170px;
+}
+.title_section{
+	background-color: #58006c;
+    overflow: hidden;
+}
+.section{
+	height: 60px;
+	color: #ffc300;
+	font-size: 20px;
+	font-weight: 600;
+	padding-top: 15px;
+}
+.cart_data>li{
+	margin-top: 40px;
+	font-size: 20px;
+	font-weight: 500;
+}
+.cart_data>li:nth-child(7){
+	margin-top: 40px;
+	font-size: 20px;
+	font-weight: 600;
+	color: #ff650b;	
+}
+.form_checkbox {
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.05em;
+}
+.form_checkbox input[type=checkbox] {
+    height: 0;
+    opacity: 0;
+    width: 0;
+    position: absolute;
+    left: -10px;
+}
+.form_checkbox input[type=checkbox]:checked + .icon { 
+	background-image: url('/images/signin/icon_checkbox.png'); 
+	background-repeat: no-repeat;
+    
+}
+.form_checkbox .icon {
+    width: 26px;
+    height: 26px;
+    border: 2px solid #dddddd;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    margin-right: 10px;
+}
+.btn_cart{
+	background-color: #ff650b;
+    color: #fff;
+	font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    border-radius: 30px;
+    border-color: #ff650b;
+
+}
+
+ol>li:nth-child(1){
+	width: 70px;
+	padding-left: 15px;
+	text-align: center;
+}
+ol>li:nth-child(2){
+	width: 250px;
+	text-align: center;
+}
+ol>li:nth-child(3){
+	width: 250px;
+	text-align: center;
+}
+ol>li:nth-child(4){
+	width: 150px;
+	text-align: center;
+}
+ol>li:nth-child(5){
+	width: 200px;
+	text-align: center;
+}
+ol>li:nth-child(6){
+	width: 150px;
+	text-align: center;
+}
+ol>li:nth-child(7){
+	width: 200px;
+	text-align: center;
+}
+ol>li:nth-child(8){
+	width: 200px;
+	text-align: center;
 }

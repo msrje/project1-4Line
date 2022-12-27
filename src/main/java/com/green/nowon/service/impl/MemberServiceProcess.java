@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.green.nowon.domain.dto.member.MemberCheckDTO;
 import com.green.nowon.domain.dto.member.MemberInsertDTO;
 import com.green.nowon.domain.entity.MemberEntityRepository;
 import com.green.nowon.security.MyRole;
@@ -21,9 +22,12 @@ public class MemberServiceProcess implements MemberService {
 	
 	@Override
 	public void save(MemberInsertDTO dto) {
-
 		mrepo.save(dto.entity(pe).addRole(MyRole.USER));
+	}
 
+	@Override
+	public void check(MemberCheckDTO dto) {
+		mrepo.findByEmail(dto.getEmail());
 	}
 
 }

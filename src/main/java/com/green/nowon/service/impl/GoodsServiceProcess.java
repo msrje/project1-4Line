@@ -46,21 +46,22 @@ public class GoodsServiceProcess implements GoodsService{
 	
 	List<CategoryEntity> cates;
 	
+	@Transactional
 	@Override
 	public void save(GoodsInsertDTO dto) {
-//		gRepository.save(dto.entity());
+
 		//카테고리와 상품 등록
 		//이미지 정보 등록, temp->실제 upload위치
-//		long[] categoryNo=dto.getCategoryNo();
-//		dto.entity();
-		
+		long[] categoryNo=dto.getCategoryNo();
+
+
 		GoodsEntity entity=gRepository.save(dto.entity());
-//		for(long no:categoryNo) {
-//			cateItemRepo.save(CategoryGoodsEntity.builder()
-//					.goods(entity)
-//					.category(categoryRepository.findById(no).get())
-//					.build());
-//		}
+		for(long no:categoryNo) {
+			cateItemRepo.save(CategoryGoodsEntity.builder()
+					.goods(entity)
+					.category(categoryRepository.findById(no).get())
+					.build());
+		}
 		
 		dto.toItemListImgs(entity, locationUpload).forEach(giRepository::save);
 		//이미지 temp->temp->실제 upload위치

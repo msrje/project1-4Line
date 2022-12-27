@@ -24,11 +24,11 @@ public class CategoryGoodsEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long cgno;
 	
-	@JoinColumn
+	@JoinColumn//category_cno
 	@ManyToOne
 	private CategoryEntity category;
 	
-	@JoinColumn
+	@JoinColumn//goods_gno
 	@ManyToOne
 	private GoodsEntity goods;
 

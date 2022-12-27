@@ -1,49 +1,37 @@
 package com.green.nowon.domain.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Table
 @Entity
 public class CategoryEntity {
-	
+	//1차~4차
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long cno;
-	private String cname;
+	private long cno;//카테고리 번호
+	private String cname;//카테고리 이름
+	private int depth;//차수
 	
-	@JoinColumn
-	@ManyToOne(fetch = FetchType.LAZY)
-	private CategoryEntity parent;
+	@JoinColumn//fk: parent_cno
+	@ManyToOne
+	private CategoryEntity parent; //상위카테고리
 	
-	//2차 카테고리
-	@Builder.Default
-	@OneToMany(mappedBy = "parent")
-	List<CategoryEntity> child=new ArrayList<>();
 	
-	public CategoryEntity addChildCategoryEntity(CategoryEntity cate) {
-		child.add(cate);
-		return this;
-	}
 
-	
-	
-	
 }

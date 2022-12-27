@@ -5,6 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.green.nowon.domain.dto.member.MemberCheckDTO;
+import com.green.nowon.domain.dto.member.MemberIdCheck;
 import com.green.nowon.domain.dto.member.MemberInsertDTO;
 import com.green.nowon.domain.entity.MemberEntityRepository;
 import com.green.nowon.security.MyRole;
@@ -26,8 +27,13 @@ public class MemberServiceProcess implements MemberService {
 	}
 
 	@Override
-	public void check(MemberCheckDTO dto) {
-		mrepo.findByEmail(dto.getEmail());
+	public boolean idCheck(String email) {
+		return mrepo.existsByEmail(email);
+	}
+	
+	@Override
+	public boolean nickNameCheck(String nickName) {
+		return mrepo.existsByNickName(nickName);
 	}
 
 }

@@ -16,24 +16,14 @@
 			$(".idCheck").click(idCheck);
 			$(".nickNameCheck").click(nickNameCheck);
 		});
-		
-		function idCheck(){
-			var email = $("#email1").val()+"@"+$("#domain").val();
-			$.ajax({
-				url: "/member/signup/idCheck", 
-				type: "POST", 
-				data : JSON.stringify(), 
-				contentType: "application/json; charset=utf-8", 
-				dataType:'text', 
 
-				async: true , 
-				success : function(data){
-					alert("이미 존재하는 아이디입니다.");
-				},
-				error :function(){
-					alert("사용가능한 아이디입니다.");
-				}
-			});
+		function idCheck(){
+			
+			var email=$("#email1").val()+"@"+$("#domain").val();
+			//alert(email);
+			
+			
+			
 		}
 
 		function nickNameCheck(){
@@ -100,7 +90,7 @@
 	    						<option value="daum.net">daum.net</option>
 	    						<option value="nate.com">nate.com</option>
 	    					</select>
-	    					<button type="button" class="idCheck">중복확인</button>
+	    					<button type="button" class="idCheck">중복확인 </button>
 	    				</li>
 	    				<li>
 	    					<span>닉네임 확인</span>

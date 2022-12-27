@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.green.nowon.domain.dto.member.MemberInsertDTO;
+import com.green.nowon.domain.dto.member.MemberCheckDTO;
 import com.green.nowon.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
@@ -27,11 +28,10 @@ public class MemberController {
 	
 	@ResponseBody//nickNameCheck중복체크 
 	@PostMapping("/member/signup/nickNameCheck")
-	public boolean nickNameCheck() {
-		
+	public boolean nickNameCheck(MemberCheckDTO dto) {
+		mService.check(dto);
 		return false;
 	}
-	
 	@ResponseBody//idCheck중복체크 
 	@PostMapping("/member/signup/idCheck")
 	public boolean idCheck() {
@@ -44,6 +44,7 @@ public class MemberController {
 	 * @param dto 데이터 삽입 dto
 	 * @return 회원가입시 로그인창으로 이동
 	 */
+	
 	@PostMapping("/members/join")
 	public String join(MemberInsertDTO dto) {
 		mService.save(dto);

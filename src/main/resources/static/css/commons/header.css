@@ -96,7 +96,7 @@
 	font-weight:bold; 
 	letter-spacing:-0.04em; 
 	position:relative; 
-	z-index:3; 
+	z-index:8; 
 	padding-top:20px;  
 }
 
@@ -108,7 +108,7 @@
 	top:-5px; 
 	width:100%; 
 	padding-top:87px; 
-	z-index:2; 
+	z-index:5; 
 	
 }
 

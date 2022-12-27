@@ -8,6 +8,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -28,6 +31,7 @@ public class CategoryGoodsEntity {
 	@ManyToOne
 	private CategoryEntity category;
 	
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn//goods_gno
 	@ManyToOne
 	private GoodsEntity goods;

@@ -7,6 +7,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,6 +32,7 @@ public class CartGoodsEntity {
 	@ManyToOne
 	private CartEntity cart;
 	
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn//fk:goods_gno
 	@ManyToOne
 	private GoodsEntity goods;

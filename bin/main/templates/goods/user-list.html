@@ -10,26 +10,18 @@
 		
 	</script>
 </head>
-<main>
-	<div class="wrap">
+<main class="menu-list">
+	<div class="wrap menu-list">
 		<!-- 카테고리 -->
-		
-			<div class="category_wrap">
-				<h2 class="goods_title">상품</h2>
-				<ul class="category1 flex">
-					<li>추천메뉴</li>
-					<li>샌드위치</li>
-					<li>샐러드</li>
-					<li>사이드</li>
-				</ul>
-				<select class="category2">
-					<option>카테고리</option>
-					<option>바베큐</option>
-					<option>치킨</option>
-					<option>야채</option>
-				</select>
-			</div>
-		
+		<div class="category_wrap">
+			<h2 class="goods_title">상품</h2>
+			<ul class="category1 flex">
+				<li>추천메뉴</li>
+				<li>샌드위치</li>
+				<li>샐러드</li>
+				<li>사이드</li>
+			</ul>
+		</div>
 		<!-- 상품리스트 -->
 		<div class="goodslist">
 			<ul>
@@ -39,16 +31,17 @@
 					<div class="box" th:each="dto:${list}">
 						<div class="goodsImg" th:style="|background-image: url('${dto.defImgUrl}');|">
 							<a class="in" th:href="|/common/goods/${dto.gno}|">디테일페이지</a>
-						</div>
-						<!-- 가격 평점 -->
-						<div class="goodsName">
-							<div>
+							<!-- 가격 평점 -->
+						<div class="goodsNP">
+							<div class="goodsName">
 								<p><a th:href="|/common/goods/${dto.gno}|">[[${dto.title}]]</a></p>
 							</div>
 							<div class="goodsPrice">
-								<p><a th:href="|/common/goods/${dto.gno}|"><strong>20%</strong>[[${dto.price}]]</a></p>
+								<p><a th:href="|/common/goods/${dto.gno}|">[[${dto.price}]]</a>원</p>
 							</div>
 						</div>
+						</div>
+						
 					</div>
 				</li>
 			</ul>

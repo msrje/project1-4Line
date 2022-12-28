@@ -12,4 +12,8 @@ public interface MemberEntityRepository extends JpaRepository<MemberEntity, Long
 	//social로그인
 	Optional<MemberEntity> findByEmailAndSocial(String username, boolean social);
 	
+	boolean existsByEmail(String email);
+	boolean existsByNickName(String nickName);
+	
+	
 }

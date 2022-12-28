@@ -1,11 +1,15 @@
 package com.green.nowon.service.impl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.green.nowon.domain.dto.member.MemberCheckDTO;
+import com.green.nowon.domain.dto.member.MemberIdCheck;
 import com.green.nowon.domain.dto.member.MemberInsertDTO;
+import com.green.nowon.domain.entity.MemberEntity;
 import com.green.nowon.domain.entity.MemberEntityRepository;
 import com.green.nowon.security.MyRole;
 import com.green.nowon.service.MemberService;
@@ -26,8 +30,13 @@ public class MemberServiceProcess implements MemberService {
 	}
 
 	@Override
-	public void check(MemberCheckDTO dto) {
-		mrepo.findByEmail(dto.getEmail());
+	public boolean idCheck(String email) {
+		return mrepo.existsByEmail(email);
+	}
+	
+	@Override
+	public boolean nickNameCheck(String nickName) {
+		return mrepo.existsByNickName(nickName);
 	}
 
 }

@@ -8,6 +8,5 @@ public interface MemberService {
 	void save(MemberInsertDTO dto);
 
 	boolean idCheck(String email);
-
 	boolean nickNameCheck(String nickName);
 }

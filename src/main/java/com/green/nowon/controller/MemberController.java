@@ -34,17 +34,16 @@ public class MemberController {
 	@GetMapping("/members/signup")
 	public String signup() {return "views/sign/signup";}
 	
-	
-	@ResponseBody//ajax
-	@GetMapping("/idCheck/{email}")
-	public ResponseEntity<Boolean> check(@PathVariable String email) {
-		return ResponseEntity.ok(mService.idCheck(email));
+	@ResponseBody
+	@GetMapping("/check/idCheck/{email}")
+	public boolean check(@PathVariable String email) {
+		return mService.idCheck(email);
 	}	
 	
 	@ResponseBody//ajax
-	@GetMapping("/nickNameCheck/{nickName}")
-	public ResponseEntity<Boolean> nickCheck(@PathVariable String nickName) {
-		return ResponseEntity.ok(mService.nickNameCheck(nickName));
+	@GetMapping("/check/nickNameCheck/{nickName}")
+	public boolean nickCheck(@PathVariable String nickName) {
+		return mService.nickNameCheck(nickName);
 	}
 	
 	/**

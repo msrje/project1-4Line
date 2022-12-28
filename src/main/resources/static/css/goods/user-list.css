@@ -91,6 +91,7 @@
 }
 .wrap>.goodslist ul li>.box>.goodsImg:hover{
 	background-color:  rgb(134, 209, 15);
+	cursor: pointer;
 }
 .wrap>.goodslist .goodsNP{
 	margin-top: 200px;	

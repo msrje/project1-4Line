@@ -19,7 +19,7 @@ public class CartGoodsListDTO {
 		this.no = e.getNo();
 		this.quantity = e.getQuantity();
 		this.goods = new GoodsListDTO(e.getGoods());
-		this.dPrice = 2500;
+		this.dPrice = 3000;
 	}
 
 }

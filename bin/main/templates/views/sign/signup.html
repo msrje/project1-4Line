@@ -16,43 +16,83 @@
 			$(".idCheck").click(idCheck);
 			$(".nickNameCheck").click(nickNameCheck);
 		});
-		
 		function idCheck(){
-			var email = $("#email1").val()+"@"+$("#domain").val();
+			var email=$("#email1").val()+"@"+$("#domain").val();
+			var id=$("#email1").val();
+			var domain=$("#domain").val();
 			$.ajax({
-				url: "/member/signup/idCheck", 
-				type: "POST", 
-				data : JSON.stringify(), 
-				contentType: "application/json; charset=utf-8", 
-				dataType:'text', 
-
-				async: true , 
-				success : function(data){
-					alert("이미 존재하는 아이디입니다.");
+				url:`/check/idCheck/${email}`,
+				success:function(result){
+					if(result==true){
+						alert("이미 존재하는 이메일입니다.");
+					}else{
+						if(id==""){
+							alert("이메일을 입력해주세요");
+							$("#idch").val(0);
+						}else if(domain==""){
+							alert("도메인을 입력해주세요");
+							$("#idch").val(0);
+						}else{
+							alert("사용가능한 이메일입니다.");
+							$("#idch").val(1);
+						}
+					}
 				},
-				error :function(){
-					alert("사용가능한 아이디입니다.");
+				error:function(){
+					alert("오류발생");
 				}
 			});
 		}
-
+		var check = 0;
 		function nickNameCheck(){
 			var nickName = $("#nickName").val();
+			
+			if(nickName==""){
+				alert("닉네임을 입력해주세요");
+				$("#nich").val(0);
+				return;
+			}
+			
+			$.ajax({
+				url:`/check/nickNameCheck/${nickName}`,
+				success:function(result){
+					if(result==true){
+						alert("이미 존재하는 닉네임입니다");
+						$("#nich").val(0);
+					}else{
+						alert("사용가능한 닉네임입니다.");
+						$("#nich").val(1);
+					}
+				},
+				error:function(){
+					alert("오류발생");
+				}
+			});
 		}
 		
-		
 		function passwordCheck(){ /*비밀번호 , 비밀번호 확인 */
-			if($("#pass").val()!=null || $("#pass").val()!=null ||$("#email").val()!=null ||$("#domain").val()!=null){
+			/* if(){
+				$(".passwordCheck").show();
+				$("#passCheck").focus();
+				$("#createbtn").attr('type', "button");
+			} */
+			
+			//if($("#pass").val()!="" || $("#pass").val()!="" || $("#email").val()!="" || $("#domain").val()!=""){
 				if($("#pass").val() != $("#passCheck").val()){
 					$(".passwordCheck").show();
 					$("#passCheck").focus();
 					$("#createbtn").attr('type', "button");
 				}else{
-					$(".passwordCheck").hide();
-					$("#email").attr('value', emaildomain);
-					$("#createbtn").attr('type', "submit");
+					if($("#nich").val()==1 && $("#idch").val()==1){
+						$(".passwordCheck").hide();
+						$("#email").attr('value', emaildomain);
+						$("#createbtn").attr('type', "submit");
+					}else{
+					}
 				}
-			}
+			//}else{
+			//	$("#createbtn").attr('type', "button");
+			//}
 		}
 		function emaildomain(){
 			var result = "";
@@ -117,7 +157,11 @@
 	    					<input type="password" id="passCheck" placeholder="비밀번호 확인">
 	    				</li>
 	    				<hr>
-	    				<li><button type="button" id="createbtn">회원가입</button></li>
+	    				<li>
+	    					<input type="hidden" id="nich" value="">
+	    					<input type="hidden" id="idch" value="">
+	    					<button type="button" id="createbtn">회원가입</button>
+	    				</li>
 	    			</ul>
 	    		</form>
     		</div>

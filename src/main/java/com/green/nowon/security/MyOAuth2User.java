@@ -37,39 +37,34 @@ public class MyOAuth2User implements OAuth2User{
 		email=(String) attributes.get("email");
 		Map<String,String> profile= (Map<String,String>) attributes.get("profile"); 
 		nickName=profile.get("nickname");
-		profileImg=null;
 		
 	}
 
 	private void ofNaver(OAuth2User oAuth2User) {
 		this.attributes=oAuth2User.getAttribute("response");
 		email=(String) attributes.get("email");
-		nickName=(String) attributes.get("name"); //profile_image
+		nickName=(String) attributes.get("name");
 		profileImg=(String) attributes.get("profile_image");
 	}
 
-	private  void ofGoogle(OAuth2User oAuth2User) {
+	private void ofGoogle(OAuth2User oAuth2User) {
 		this.attributes=oAuth2User.getAttributes();
 		email=(String) attributes.get("email");
-		nickName=(String) attributes.get("name"); //picture
-		profileImg=(String) attributes.get("picture");
+		nickName=(String) attributes.get("name"); 
 	}
-
 
 	@Override
 	public Map<String, Object> getAttributes() {
 		return attributes;
 	}
 
-
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return authorities;
 	}
 
-
 	@Override
-	public String getName() {//로그인 ID에 대응하는 정보
+	public String getName() {
 		return email;
 	}
 

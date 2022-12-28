@@ -6,6 +6,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -20,6 +21,10 @@ import org.springframework.web.filter.HiddenHttpMethodFilter;
 @Configuration
 public class SecurityConfig {
 	
+	@Bean
+	OAuth2UserService<OAuth2UserRequest, OAuth2User> myOAuth2UserService() {
+		return new MyOAuth2UserService();
+	}
 	
 	//DB의 인증정보를 이용해서 인증처리하는 service
 	@Bean
@@ -38,10 +43,6 @@ public class SecurityConfig {
         return hiddenHttpMethodFilter;
     }
 	
-	@Bean
-	OAuth2UserService<OAuth2UserRequest, OAuth2User> myOAuth2UserService() {
-		return new MyOAuth2UserService();
-	}
 	
 	@Bean
  	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

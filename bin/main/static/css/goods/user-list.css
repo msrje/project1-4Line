@@ -90,6 +90,7 @@
 	margin-bottom: 30px;
 }
 .wrap>.goodslist ul li>.box>.goodsImg:hover{
+	cursor: pointer;
 	background-color:  rgb(134, 209, 15);
 }
 .wrap>.goodslist .goodsNP{

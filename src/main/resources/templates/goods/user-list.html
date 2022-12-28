@@ -28,7 +28,7 @@
 				<!-- db에서 받은 만큼 복사하기 -->
 				<li class="flex">
 					<!-- 이미지 -->
-					<div class="box" th:each="dto:${list}">
+					<div class="box" th:each="dto:${list}" th:onclick="|location.href='/common/goods/${dto.gno}'|">
 						<div class="goodsImg" th:style="|background-image: url('${dto.defImgUrl}');|">
 							<a class="in" th:href="|/common/goods/${dto.gno}|">디테일페이지</a>
 							<!-- 가격 평점 -->

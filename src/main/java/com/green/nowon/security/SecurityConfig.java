@@ -48,8 +48,8 @@ public class SecurityConfig {
  	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
  		http
  			.authorizeRequests(authorize -> authorize
- 						.antMatchers("/css/**","/images/**").permitAll()
- 						.antMatchers("/","/members/**","/comm/**","/check/**").permitAll()
+ 						.antMatchers("/css/**","/images/**","/js/**").permitAll()
+ 						.antMatchers("/","/members/**","/comm/**","/check/**","/my-websocket/**","/common/**","/webjars/**").permitAll()
  						.antMatchers("/admin/**").hasRole("ADMIN")
  						.antMatchers(HttpMethod.PATCH,"/admin/**").hasRole("ADMIN")
  						.anyRequest().authenticated()

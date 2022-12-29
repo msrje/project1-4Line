@@ -34,15 +34,22 @@
 						</label>
 						<input class="cartGoodsNo" th:id="${'ci-no-' + dtoStat.index}" type="hidden" th:value="${dto.no}">
 					</li>
-					<li><img alt="상품목록이미지" th:src="${dto.goods.defImgUrl}" style="height: 100px; width: 160px;"></li>
+					<li><img alt="상품목록이미지" th:src="${dto.goods.defImgUrl}" style="height: 120px; width: 160px;"></li>
 					<li>
 						<p th:text="${dto.goods.title}">상품명</p>
-						<p th:text="${#numbers.formatInteger(dto.goods.price, 0, 'COMMA')}">단가</p>
+						<!-- <p th:text="${#numbers.formatInteger(dto.goods.price, 0, 'COMMA')}">단가</p> -->
 					</li>
-					<li th:text="${dto.quantity}">구매수량</li>
-					<li th:text="${#numbers.formatInteger(dto.goods.price*dto.quantity, 0, 'COMMA')}">토탈금액</li>
-					<li th:text="${#numbers.formatInteger(dto.dPrice, 0, 'COMMA')}">배송비</li>
-					<li th:text="${#numbers.formatInteger(dto.goods.price*dto.quantity+dto.dPrice, 0, 'COMMA')}">주문금액</li>
+					<li>
+						<p th:text="${dto.quantity}">구매수량 </p>
+					</li>
+					<li>
+						<p th:text="${#numbers.formatInteger(dto.goods.price*dto.quantity, 0, 'COMMA')}">토탈금액</p>
+					</li>
+					<li>
+						<p th:text="${#numbers.formatInteger(dto.dPrice, 0, 'COMMA')}">배송비</p>
+					</li>
+					<li>
+						<p th:text="${#numbers.formatInteger(dto.goods.price*dto.quantity+dto.dPrice, 0, 'COMMA')}">주문금액</p>
 					<li><button class=btn_cart >주문하기</button></li>
 				</ol>
 			</div>

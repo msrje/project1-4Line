@@ -72,6 +72,9 @@
 	font-weight: 600;
 	padding-top: 15px;
 }
+.cart_data{
+	border-bottom: solid;
+}
 .cart_data>li{
 	margin-top: 40px;
 	font-size: 20px;
@@ -83,6 +86,9 @@
 	font-weight: 600;
 	color: #ff650b;	
 }
+.cart_data>li p{
+	margin-top: 35px;
+}
 .form_checkbox {
     display: inline-block;
     cursor: pointer;
@@ -92,6 +98,7 @@
     font-size: 16px;
     line-height: 26px;
     letter-spacing: -0.05em;
+    margin-top: 35px;
 }
 .form_checkbox input[type=checkbox] {
     height: 0;
@@ -103,7 +110,6 @@
 .form_checkbox input[type=checkbox]:checked + .icon { 
 	background-image: url('/images/signin/icon_checkbox.png'); 
 	background-repeat: no-repeat;
-    
 }
 .form_checkbox .icon {
     width: 26px;
@@ -126,7 +132,7 @@
     height: 40px;
     border-radius: 30px;
     border-color: #ff650b;
-
+	margin-top: 25px;
 }
 
 ol>li:nth-child(1){

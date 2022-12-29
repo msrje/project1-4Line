@@ -3,17 +3,36 @@
  */
 var stompClient = null;
 $(function(){
-	$("#question").keyup(menuClicked(el));
+	$("#question").keyup(questionKeyuped);
 });
-function openChat(el){
-	$(el).hide();
-	$("#chat-disp").show();
+function openChat(){
+	setConnectStated(true);//접속
 	connect();
 }
 function showMessage(message) {
     $("#chat-content").append(message);
+	//대화창 스크롤을 항상 최하위에 배치   
+    $("#chat-content").scrollTop($("#chat-content").prop("scrollHeight"));
 }
 
+function setConnectStated(isTrue){
+	if(isTrue){
+		$("#btn-chat-open").hide();
+		$("#chat-disp").show();
+	}else{
+		$("#btn-chat-open").show();
+		$("#chat-disp").hide();
+	}
+	$("#chat-content").html("");
+}
+function disconnect() {
+    if (stompClient !== null) {
+        stompClient.disconnect();
+    }
+    setConnectStated(false);
+    console.log("Disconnected");
+}
+//버튼클릭시 접속
 function connect() {
     var socket = new SockJS('/my-websocket');
     stompClient = Stomp.over(socket);
@@ -26,22 +45,23 @@ function connect() {
         stompClient.subscribe('/topic/greetings', function (botMessage) {
             showMessage(JSON.parse(botMessage.body).message);
         });
-        //서버가 토픽을 발행시키면 자동수신
         stompClient.subscribe('/topic/message', function (botMessage) {
             showMessage(JSON.parse(botMessage.body).message);
         });
-        stompClient.send("/app/hello", {}, JSON.stringify({'name': 'guest'}));
+        
+        stompClient.send("/app/hello", {}, JSON.stringify({'content': 'guest'}));
         //stompClient.subscribe('/topic/message', onmessage);
     });
 }
 
+
+
 function inputTagString(text){
-	//var text =$(el).text();
-	var now = new Date();
-	var ampm = (now.getHours()>11)?"오후":"오전";
-	var time = ampm + now.getHours()%12+":"+now.getMinutes();
-	var message = `
-		<div class="msg user flex">
+	var now=new Date();
+	var ampm=(now.getHours()>11)?"오후":"오전";
+	var time= ampm + now.getHours()%12+":"+now.getMinutes();
+	var message=`
+		<div class="msg user flex end">
 			<div class="message">
 				<div class="part">
 					<p>${text}</p>
@@ -52,25 +72,27 @@ function inputTagString(text){
 	`;
 	return message;
 }
-
-function menuClicked(el){
-	var text= $(el).text().trim();
-	var message = inputTagString(text);
+//메뉴클릭시 메뉴 텍스트 화면에 표현 
+function menuclicked(el){
+	var text=$(el).text().trim();
+	var message=inputTagString(text);
 	showMessage(message);
 	stompClient.send("/app/message", {}, JSON.stringify({'content': text}));
 }
 
-function questionKeyUp(event){
+//엔터가 입력이되면 질문을 텍스트 화면에 표현 
+function questionKeyuped(event){
 	if(event.keyCode!=13)return;
-	btnMsgSendClicked();
+	btnMmsgSendClicked()
 }
 
-function btnMsgSendClicked(){
-	var text= $("#question").val().trim();
-	if(text==""|| text.length<2)return;
+//전송버튼 클릭이되면 질문을 텍스트 화면에 표현
+function btnMmsgSendClicked(){
+	var question=$("#question").val().trim();
+	if(question=="" || question.length<2)return;
 	
-	var message = inputTagString(text);
+	var message=inputTagString(question);
 	showMessage(message);
 	$("#question").val("");
-	stompClient.send("/app/message", {}, JSON.stringify({'content': text}));
+	stompClient.send("/app/message", {}, JSON.stringify({'content': question}));
 }

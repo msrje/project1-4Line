@@ -8,15 +8,19 @@
 <body>
 	
 	<dl id="chat-disp">
-		<dt class="chat-header">
-			<span>4Line_프랜드</span>
+		<dt id="chat-header">
+			<span>4Line_프렌드</span>
+			<span class="btn-wrap">
+				<button type="button" id="btn-chat-close" onclick="disconnect()">X</button>
+			</span>
 		</dt>
 		<dd id="chat-content">
 			
 		</dd>
-		<dd class="chat-question">
-			<input type="text" id="question" onkeyup="questionKeyUp(event)" placeholder="질문을 입력하세요">
-			<button type="button" id="btn-msg-send" onclick="btnMsgSendClicked()">전송</button>
+		<dd id="chat-question" class="flex between">
+			<span class="flex column center"><i></i></span>
+			<input type="text" id="question"  placeholder="질문을 입력하세요">
+			<button type="button" id="btn-msg-send" onclick="btnMmsgSendClicked()">전송</button>
 		</dd>
 	</dl>
 	

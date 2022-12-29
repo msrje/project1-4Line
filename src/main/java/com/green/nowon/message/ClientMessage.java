@@ -11,5 +11,4 @@ import lombok.Setter;
 @Getter
 public class ClientMessage {
 	  private String content;
-	  private String name;
 }

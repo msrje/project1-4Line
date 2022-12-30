@@ -12,8 +12,8 @@ permissions:
     
 hooks:
   AfterInstall:
-    - location: Scripts/deploy
+    - location: Script/deploy
       timeout: 60
 #  ApplicationStart:
-#    - location: Scripts/deploy
+#    - location: Script/deploy
 #      timeout: 60

@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<style>
+li {
+	margin: 5px 0;
+}
+</style>
 	<ul th:if="${base}">
 		<li>
 			<span th:text="${base.receiverName}">수하인</span>

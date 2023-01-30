@@ -97,7 +97,11 @@
 				<!-- ///////////////////////로그인/회원가입////////////////// -->	
 				<!-- ///////////////////////로그인/회원가입////////////////// -->
 						<div class="util_menu">
+							
 							<ul>
+								<li class="before_sign" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+									<a href="/admin">관리자 페이지</a>
+								</li>
 								<li class="before_sign" sec:authorize="isAnonymous()">
 									<a href="/members/signin">로그인</a>
 								</li>

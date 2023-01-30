@@ -10,7 +10,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 war {
   enabled = true
-  archiveName("subway3.war")
+  archiveName("4line.war")
 }
 bootWar { 
   enabled = false 

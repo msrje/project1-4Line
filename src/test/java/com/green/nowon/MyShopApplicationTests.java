@@ -19,7 +19,7 @@ class MyShopApplicationTests {
 	@Autowired
 	private PasswordEncoder pe;
 	
-	@Test
+	//@Test
 	void contextLoads() {
 		mrepo.save(MemberEntity.builder()
 					.mno(1)

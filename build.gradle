@@ -10,7 +10,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 war {
   enabled = true
-  archiveName("4line.war")
+  archiveName("4Line.war")
 }
 bootWar { 
   enabled = false 
